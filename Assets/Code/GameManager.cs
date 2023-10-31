@@ -8,8 +8,9 @@ public class GameManager : MonoBehaviour
 	private static GameManager _instance;
 
 	public int sceneNum;
+	public Scenes levelSelected;
 
-    private static GameManager Instance
+    public static GameManager Instance
 	{
 		get
 		{
@@ -22,10 +23,13 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	private void Awake()
+	void Awake()
 	{
+		Debug.Log("Awake is called");
 		_instance = this;
+		Debug.Log(_instance);
 		DontDestroyOnLoad(this); // A GameManager should exist after the Level is destroyed and a new level is loaded.
+		LoadScene(1);
 	}
 
 	private void Start()
@@ -34,7 +38,7 @@ public class GameManager : MonoBehaviour
 	}
 
 	// Use this function to load the specific level from the forest
-	void LoadScene(int scene)
+	public void LoadScene(int scene)
 	{
 		SceneManager.LoadScene(scene);
 	}
@@ -58,4 +62,20 @@ public class GameManager : MonoBehaviour
 		}
 		SceneManager.LoadScene(sceneNum);
 	}
+}
+
+public enum Scenes
+{
+	MENU,
+	FOREST,
+	HOME,
+	SUPERMARKET,
+	BAR,
+	PARTY
+}
+
+public enum HomeLevelCustomize
+{
+	CLEAN,
+	DISPOSE
 }
