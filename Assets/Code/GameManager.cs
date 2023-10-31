@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 	private static GameManager _instance;
 
 	public int sceneNum;
+	public Scenes levelSelected;
 
     public static GameManager Instance
 	{
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour
 		_instance = this;
 		Debug.Log(_instance);
 		DontDestroyOnLoad(this); // A GameManager should exist after the Level is destroyed and a new level is loaded.
+		LoadScene(1);
 	}
 
 	private void Start()
@@ -70,4 +72,10 @@ public enum Scenes
 	SUPERMARKET,
 	BAR,
 	PARTY
+}
+
+public enum HomeLevelCustomize
+{
+	CLEAN,
+	DISPOSE
 }
