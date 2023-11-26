@@ -7,6 +7,8 @@ public class movement : MonoBehaviour
     public float moveSpeed = 5f; // Adjust this value to control the movement speed
     public float turnSpeed = 150f; // Adjust this value to control the turning speed
     public float gravity = 9.8f; // Adjust this value to control the strength of gravity
+    float horizontalSpeed = 2.0f;
+    float verticalSpeed = 2.0f;
 
     private CharacterController characterController;
 
@@ -33,13 +35,11 @@ public class movement : MonoBehaviour
         // Move the character using CharacterController
         characterController.Move(movement * moveSpeed * Time.deltaTime);
 
-        // Get mouse input for turning
-        float mouseX = Input.GetAxis("Mouse X");
+        // Get the mouse delta. This is not in the range -1...1
+        float h = horizontalSpeed * Input.GetAxis("Mouse X");
+        float v = verticalSpeed * Input.GetAxis("Mouse Y");
 
-        // Calculate the rotation based on mouse input
-        Vector3 rotation = new Vector3(0f, mouseX, 0f) * turnSpeed * Time.deltaTime;
-
-        // Rotate the GameObject
-        transform.Rotate(rotation);
+        transform.Rotate(-v, h, 0);
     }
+
 }
