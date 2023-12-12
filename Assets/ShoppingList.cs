@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShoppingList : MonoBehaviour
 {
     public Dictionary<string, bool> shoppingList;
+    public bool allItemsInCart = false;
 
     void Awake()
     {
@@ -19,7 +20,7 @@ public class ShoppingList : MonoBehaviour
 
 	void OnCollisionEnter(Collision collision)
 	{
-        Debug.Log("Collision Entered");
+        //Debug.Log("Collision Entered");
         switch (collision.gameObject.tag)
 		{
             case "Jam":
@@ -57,7 +58,23 @@ public class ShoppingList : MonoBehaviour
             default:
                 break;
         }
-	}
+
+        int counter = 0;
+        // Check if all items are in cart
+        foreach(var item in shoppingList.Values)
+		{
+            if (item == true)
+			{
+                counter += 1;
+			}
+
+            if (counter == shoppingList.Count)
+			{
+                allItemsInCart = true;
+			}
+		}
+        Debug.Log("Counter " + counter);
+    }
 
 	// Important that all names of the products are written exactly like the tags in the Editor
 	private void initShoppingList()
@@ -73,5 +90,6 @@ public class ShoppingList : MonoBehaviour
         shoppingList.Add("Cheese", false);
         shoppingList.Add("Milk", false);
         shoppingList.Add("Cereal", false);
+        Debug.Log("Dict Count: " + shoppingList.Count);
     }
 }
