@@ -77,9 +77,4 @@ crashlytics-build.properties
 # Oculus 2
 /Quest2_BackUpThisFolder_ButDontShipItWithYourGame/*
 
-# Hurricane VR
-/Assets/HurricaneVR
-
-# Steam
-/Assets/SteamVR
 
