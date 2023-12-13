@@ -4,39 +4,21 @@
 TagManager:
   serializedVersion: 2
   tags:
-<<<<<<< HEAD
   - Left
   - Right
   - projectile
   - FxTemporaire
-=======
-  - Jam
-  - Bread
-  - Chips
-  - Water
-  - Zewa
-  - Laundry
-  - Yoghurt
-  - Cheese
-  - Milk
-  - Cereal
->>>>>>> master
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - 
   - Water
   - UI
-<<<<<<< HEAD
   - 
   - 
   - Player
   - DynamicPose
-=======
-  - ShoppingCart
-  - EntranceDoor
->>>>>>> master
   - 
   - 
   - 
