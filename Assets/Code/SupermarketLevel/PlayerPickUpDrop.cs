@@ -16,6 +16,9 @@ public class PlayerPickUpDrop : MonoBehaviour
 
 	private void Update()
 	{
+		// Remove rotation in x and z direction
+		transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y, 0f);
+
 		if (Input.GetKeyDown(KeyCode.E))
 		{
 			if (grabbed == false)

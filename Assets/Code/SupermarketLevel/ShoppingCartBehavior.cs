@@ -6,6 +6,8 @@ public class ShoppingCartBehavior : MonoBehaviour
 {
     private Rigidbody objectRigidbody;
     private Transform objectGrabPointTransform;
+    [SerializeField] private GameObject playerCapsule;
+    [SerializeField] private GameObject supermarket;
 
     void Awake()
     {
@@ -23,6 +25,8 @@ public class ShoppingCartBehavior : MonoBehaviour
         Debug.Log("Grab Cart");
         this.objectGrabPointTransform = objectGrabPointTransform;
         objectRigidbody.useGravity = true;
+        this.gameObject.transform.parent = playerCapsule.transform;
+        this.gameObject.transform.position = new Vector3(playerCapsule.transform.position.x, playerCapsule.transform.position.y, playerCapsule.transform.position.z * 1.5f);
     }
 
     public void Leave()
@@ -30,6 +34,7 @@ public class ShoppingCartBehavior : MonoBehaviour
         Debug.Log("Drop Cart");
         objectGrabPointTransform = null;
         objectRigidbody.useGravity = true;
+        this.gameObject.transform.parent = supermarket.transform;
     }
 
     private void FixedUpdate()

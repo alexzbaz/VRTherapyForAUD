@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShoppingList : MonoBehaviour
 {
-    public Dictionary<string, bool> shoppingList;
+    private Dictionary<string, bool> shoppingList;
     public bool allItemsInCart = false;
 
     void Awake()
@@ -73,7 +73,7 @@ public class ShoppingList : MonoBehaviour
                 allItemsInCart = true;
 			}
 		}
-        Debug.Log("Counter " + counter);
+        //Debug.Log("Counter " + counter);
     }
 
 	// Important that all names of the products are written exactly like the tags in the Editor
@@ -90,6 +90,5 @@ public class ShoppingList : MonoBehaviour
         shoppingList.Add("Cheese", false);
         shoppingList.Add("Milk", false);
         shoppingList.Add("Cereal", false);
-        Debug.Log("Dict Count: " + shoppingList.Count);
     }
 }

@@ -6,7 +6,7 @@ public class EntranceDoor : MonoBehaviour
 {
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private GameObject entrance;
-    private ShoppingList ShoppingList;
+    public ShoppingList shoppingList;
 
     [SerializeField] private bool rightDoor; // Set in Editor
     [SerializeField] private bool exitDoor; // Set in Editor
@@ -47,9 +47,12 @@ public class EntranceDoor : MonoBehaviour
 
         if (exitDoor)
 		{
-            if (ShoppingList.allItemsInCart)
+            if (rightDoor)
 			{
-                entrance.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+                if (shoppingList.allItemsInCart)
+                {
+                    entrance.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+                }
             }
 		}
     }
