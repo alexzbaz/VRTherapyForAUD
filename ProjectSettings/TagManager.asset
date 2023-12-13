@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Left
+  - Right
+  - projectile
   layers:
   - Default
   - TransparentFX
@@ -13,6 +16,8 @@ TagManager:
   - UI
   - 
   - 
+  - Player
+  - DynamicPose
   - 
   - 
   - 
@@ -23,10 +28,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Grabbable
+  - Hand
   - 
   - 
   - 
