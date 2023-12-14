@@ -73,3 +73,8 @@ crashlytics-build.properties
 
 # Assets
 /Assets/AssetStore/*
+
+# Oculus 2
+/Quest2_BackUpThisFolder_ButDontShipItWithYourGame/*
+
+

@@ -4,25 +4,21 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Jam
-  - Bread
-  - Chips
-  - Water
-  - Zewa
-  - Laundry
-  - Yoghurt
-  - Cheese
-  - Milk
-  - Cereal
+  - Left
+  - Right
+  - projectile
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - 
   - Water
   - UI
-  - ShoppingCart
-  - EntranceDoor
+  - 
+  - 
+  - Player
+  - DynamicPose
   - 
   - 
   - 
@@ -33,10 +29,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Grabbable
+  - Hand
   - 
   - 
   - 
