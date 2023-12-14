@@ -28,7 +28,7 @@ public class MainMenu : MonoBehaviour
 	// Is called from Editor
 	public void PlayGame()
 	{
-		gameManager.LoadScene(2); // Start at the forest
+		gameManager.LoadScene(3); // Start at the forest
 	}
 
 	// Is called from Editor
