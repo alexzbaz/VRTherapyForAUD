@@ -23,6 +23,8 @@ TagManager:
   - UI
   - ShoppingCart
   - EntranceDoor
+  - Player
+  - DynamicPose
   - 
   - 
   - 
@@ -33,10 +35,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Grabbable
+  - Hand
   - 
   - 
   - 
