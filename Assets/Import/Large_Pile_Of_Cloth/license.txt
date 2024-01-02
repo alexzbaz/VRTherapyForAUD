@@ -1,0 +1,11 @@
+Model Information:
+* title:	Large Pile Of Cloth
+* source:	https://sketchfab.com/3d-models/large-pile-of-cloth-145f510921ba45489e1536b3c47b6b85
+* author:	Ujjval Singhal (https://sketchfab.com/ujjvalvfxartist9211)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Large Pile Of Cloth" (https://sketchfab.com/3d-models/large-pile-of-cloth-145f510921ba45489e1536b3c47b6b85) by Ujjval Singhal (https://sketchfab.com/ujjvalvfxartist9211) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

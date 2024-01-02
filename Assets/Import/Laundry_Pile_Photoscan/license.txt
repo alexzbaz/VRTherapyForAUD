@@ -1,0 +1,11 @@
+Model Information:
+* title:	Laundry Pile Photoscan
+* source:	https://sketchfab.com/3d-models/laundry-pile-photoscan-4ae1d88efc0742ab848a383a09673da7
+* author:	nothen (https://sketchfab.com/nothen)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Laundry Pile Photoscan" (https://sketchfab.com/3d-models/laundry-pile-photoscan-4ae1d88efc0742ab848a383a09673da7) by nothen (https://sketchfab.com/nothen) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
