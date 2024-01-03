@@ -1,0 +1,11 @@
+Model Information:
+* title:	Week 1 HW Laundry Basket
+* source:	https://sketchfab.com/3d-models/week-1-hw-laundry-basket-561960f6df8a49aca4f3ff54a7d82b8c
+* author:	Ben_Schnetzer (https://sketchfab.com/Ben_Schnetzer)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Week 1 HW Laundry Basket" (https://sketchfab.com/3d-models/week-1-hw-laundry-basket-561960f6df8a49aca4f3ff54a7d82b8c) by Ben_Schnetzer (https://sketchfab.com/Ben_Schnetzer) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

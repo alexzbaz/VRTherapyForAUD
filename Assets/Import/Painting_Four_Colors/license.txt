@@ -1,0 +1,8 @@
+Model Information:
+* title:	Painting Four Colors
+* source:	https://sketchfab.com/3d-models/painting-four-colors-b3f9d0e1bb72484d8a5c9d9c0f55a827
+* author:	Anom Purple Modelling (https://sketchfab.com/Anom404)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

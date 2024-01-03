@@ -1,0 +1,8 @@
+Model Information:
+* title:	Painting Patched Up
+* source:	https://sketchfab.com/3d-models/painting-patched-up-9634f23c22df4b54856319cb897d1e7d
+* author:	Anom (https://sketchfab.com/Anom404)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

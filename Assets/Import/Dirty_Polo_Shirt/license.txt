@@ -1,0 +1,11 @@
+Model Information:
+* title:	Dirty Polo Shirt
+* source:	https://sketchfab.com/3d-models/dirty-polo-shirt-376a44cb321e4934aac6fc13eb389f4c
+* author:	Fridqeir (https://sketchfab.com/Fridqeir)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Dirty Polo Shirt" (https://sketchfab.com/3d-models/dirty-polo-shirt-376a44cb321e4934aac6fc13eb389f4c) by Fridqeir (https://sketchfab.com/Fridqeir) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
