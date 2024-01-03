@@ -14,6 +14,13 @@ TagManager:
   - Cheese
   - Milk
   - Cereal
+  - projectile
+  - FxTemporaire
+  - Pot_Socket
+  - Table
+  - Inventory
+  - Hammer_Socket
+  - Book_Socket
   layers:
   - Default
   - TransparentFX
@@ -23,6 +30,8 @@ TagManager:
   - UI
   - ShoppingCart
   - EntranceDoor
+  - Player
+  - DynamicPose
   - 
   - 
   - 
@@ -33,10 +42,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Grabbable
+  - Hand
   - 
   - 
   - 
