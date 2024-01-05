@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Pointsystem : MonoBehaviour
 {
     public static int points;
+    public TMP_Text pointsText;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -18,28 +22,38 @@ public class Pointsystem : MonoBehaviour
         return points;
 	}
 
+    public void updateText()
+	{
+        pointsText.text = points.ToString();
+	}
+
     public void add50Points()
 	{
         Debug.Log("Points before: " + points);
         points += 50;
         Debug.Log("Points after: " + points);
+        updateText();
     }
 
     public void add100Points()
 	{
         points += 100;
-	}
+        updateText();
+
+    }
 
     public void add200Points()
 	{
         points += 200;
-	}
+        updateText();
+    }
 
     public void deduct20Points()
 	{
         if (points >= 20)
 		{
             points -= 20;
+            updateText();
         }
 	}
 
@@ -48,6 +62,7 @@ public class Pointsystem : MonoBehaviour
         if (points >= 50)
         {
             points -= 50;
+            updateText();
         }
 	}
 }
