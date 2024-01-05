@@ -8,8 +8,7 @@ public class TutorialObjects : MonoBehaviour
     public Vector3 initPos;
     public Quaternion initRotation;
     public Vector3 initScale;
-    public string compareTag;
-    public Ray ray;
+    [SerializeField] private string compareTag;
     public GameObject socket;
     public Vector3 dirToSocket;
     public float rCol;
@@ -17,6 +16,7 @@ public class TutorialObjects : MonoBehaviour
     public float rSocket;
     public bool trigger;
     public bool inCoroutine;
+    [SerializeField] private Pointsystem pointsystem;
 
     void Start()
     {
@@ -30,8 +30,6 @@ public class TutorialObjects : MonoBehaviour
         initScale = transform.localScale;
         Debug.Log(initPos);
         dirToSocket = socket.transform.position - centerCol;
-        ray = new Ray(centerCol, dirToSocket);
-        Debug.DrawRay(ray.origin, ray.direction * (rCol + rSocket));
     }
 
     void Update()
@@ -39,8 +37,6 @@ public class TutorialObjects : MonoBehaviour
 
         centerCol = transform.position + GetComponent<SphereCollider>().center;
         dirToSocket = socket.transform.position - centerCol;
-        ray = new Ray(centerCol, dirToSocket);
-        Debug.DrawRay(ray.origin, ray.direction * (rCol + rSocket));
 
         //if (transform.position != initPos)
         //{
@@ -85,11 +81,17 @@ public class TutorialObjects : MonoBehaviour
                 }
             }
         }
-
-        
     }
 
-    private void OnTriggerStay(Collider other)
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.CompareTag(compareTag))
+		{
+            pointsystem.add50Points();
+        }
+	}
+
+	private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag(compareTag))
         {
