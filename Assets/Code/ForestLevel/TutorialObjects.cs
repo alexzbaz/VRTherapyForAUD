@@ -4,51 +4,46 @@ using UnityEngine;
 
 public class TutorialObjects : MonoBehaviour
 {
+    // Object's position
     public GameObject child;
-    public Vector3 initPos;
-    public Quaternion initRotation;
-    public Vector3 initScale;
+    [SerializeField] private Vector3 initPos;
+    [SerializeField] private Quaternion initRotation;
+    [SerializeField] private Vector3 initScale;
+
+    // Placing object
     [SerializeField] private string compareTag;
-    public GameObject socket;
-    public Vector3 dirToSocket;
-    public float rCol;
-    public Vector3 centerCol;
-    public float rSocket;
-    public bool trigger;
-    public bool inCoroutine;
+    [SerializeField] private GameObject socket;
+
+    // [SerializeField] private Vector3 dirToSocket;  --> Diese 4 Variablen werden laut Visual Studio nicht ausgelesen,
+    // [SerializeField] private float rCol;           --> also werden sie nicht genutzt. Können die raus? Hab sie auch unten auskommentiert
+    // [SerializeField] private Vector3 centerCol;
+    // [SerializeField] private float rSocket;
+
+    // Grabbing object
+    [SerializeField] private bool trigger;
+    [SerializeField] private bool inCoroutine;
+
+    // Pointsystem
     [SerializeField] private Pointsystem pointsystem;
 
     void Start()
     {
         trigger = true;
         inCoroutine = false;
-        centerCol = transform.position + GetComponent<SphereCollider>().center;
-        rSocket = socket.GetComponent<SphereCollider>().radius;
-        rCol = GetComponent<SphereCollider>().radius;
+        // centerCol = transform.position + GetComponent<SphereCollider>().center;
+        // rSocket = socket.GetComponent<SphereCollider>().radius;
+        // rCol = GetComponent<SphereCollider>().radius;
         initPos = transform.position;
         initRotation = transform.rotation;
         initScale = transform.localScale;
-        Debug.Log(initPos);
-        dirToSocket = socket.transform.position - centerCol;
+        // dirToSocket = socket.transform.position - centerCol;
     }
 
     void Update()
     {
+        // centerCol = transform.position + GetComponent<SphereCollider>().center;
+        // dirToSocket = socket.transform.position - centerCol;
 
-        centerCol = transform.position + GetComponent<SphereCollider>().center;
-        dirToSocket = socket.transform.position - centerCol;
-
-        //if (transform.position != initPos)
-        //{
-        //    trigger = true;
-        //}
-        //else
-        //{
-        //    trigger = false;
-        //}
-
-
-        //Debug.Log(transform.position);
         // Check if object has a child -> is being held
         if (transform.position != initPos && trigger == true)
         {

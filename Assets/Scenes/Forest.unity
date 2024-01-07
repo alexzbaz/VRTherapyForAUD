@@ -231,6 +231,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4183768154327135795, guid: a03ed519be01d1440a8ec63d2ac101f7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6653875500687940427, guid: a03ed519be01d1440a8ec63d2ac101f7,
         type: 3}
       propertyPath: LeftGripActivated.m_PersistentCalls.m_Calls.Array.size
@@ -1529,10 +1534,6 @@ MonoBehaviour:
   initScale: {x: 0, y: 0, z: 0}
   compareTag: Hammer_Socket
   socket: {fileID: 1248410734}
-  dirToSocket: {x: 0, y: 0, z: 0}
-  rCol: 0
-  centerCol: {x: 0, y: 0, z: 0}
-  rSocket: 0
   trigger: 0
   inCoroutine: 0
   pointsystem: {fileID: 1401172009}
@@ -2231,10 +2232,6 @@ MonoBehaviour:
   initScale: {x: 0, y: 0, z: 0}
   compareTag: Pot_Socket
   socket: {fileID: 1373931992}
-  dirToSocket: {x: 0, y: 0, z: 0}
-  rCol: 0
-  centerCol: {x: 0, y: 0, z: 0}
-  rSocket: 0
   trigger: 0
   inCoroutine: 0
   pointsystem: {fileID: 1401172009}
@@ -5408,7 +5405,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsText: {fileID: 673897323}
-  audio: {fileID: 0}
 --- !u!4 &1401172010
 Transform:
   m_ObjectHideFlags: 0
@@ -8477,10 +8473,6 @@ MonoBehaviour:
   initScale: {x: 0, y: 0, z: 0}
   compareTag: Book_Socket
   socket: {fileID: 2078449306}
-  dirToSocket: {x: 0, y: 0, z: 0}
-  rCol: 0
-  centerCol: {x: 0, y: 0, z: 0}
-  rSocket: 0
   trigger: 0
   inCoroutine: 0
   pointsystem: {fileID: 1401172009}
@@ -9167,6 +9159,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: XRRig
+      objectReference: {fileID: 0}
+    - target: {fileID: 9153753797107193946, guid: 035de121a9f751246a036155637b1358,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 035de121a9f751246a036155637b1358, type: 3}

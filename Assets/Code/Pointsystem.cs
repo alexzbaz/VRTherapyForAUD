@@ -8,7 +8,7 @@ public class Pointsystem : MonoBehaviour
 {
     public static int points;
     public TMP_Text pointsText;
-    public AudioSource audio;
+    private AudioSource audio;
 
     // Start is called before the first frame update
     void Awake()
