@@ -21,6 +21,11 @@ TagManager:
   - Inventory
   - Hammer_Socket
   - Book_Socket
+  - Soda
+  - ToiletPaper
+  - Pasta
+  - Juice
+  - Eggs
   layers:
   - Default
   - TransparentFX
