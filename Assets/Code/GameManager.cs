@@ -29,12 +29,12 @@ public class GameManager : MonoBehaviour
 		_instance = this;
 		Debug.Log(_instance);
 		DontDestroyOnLoad(this); // A GameManager should exist after the Level is destroyed and a new level is loaded.
-		LoadScene(1);
+		LoadScene(sceneNum);
 	}
 
 	private void Start()
 	{
-		sceneNum = 0;
+		//sceneNum = 0;
 	}
 
 	// Use this function to load the specific level from the forest
@@ -43,25 +43,16 @@ public class GameManager : MonoBehaviour
 		SceneManager.LoadScene(scene);
 	}
 
-	// For testing purposes
-	private void Update()
-	{
-		if (Input.GetKeyDown(KeyCode.Space))
-		{
-			NextScene();
-		}
-	}
-
-	// For testing purposes
-	void NextScene()
-	{
-		sceneNum++;
-		if (sceneNum == 5)
-		{
-			sceneNum = 0;
-		}
-		SceneManager.LoadScene(sceneNum);
-	}
+	//// For testing purposes
+	//void NextScene()
+	//{
+	//	sceneNum++;
+	//	if (sceneNum == 5)
+	//	{
+	//		sceneNum = 0;
+	//	}
+	//	SceneManager.LoadScene(sceneNum);
+	//}
 }
 
 public enum Scenes
