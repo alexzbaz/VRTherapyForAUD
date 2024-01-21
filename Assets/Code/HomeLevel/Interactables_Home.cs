@@ -25,7 +25,7 @@ public class Interactables_Home : MonoBehaviour
     [SerializeField] private bool inCoroutine;
 
     // Pointsystem
-    [SerializeField] private Pointsystem pointsystem;
+    //[SerializeField] private Pointsystem pointsystem;
 
     void Start()
     {
@@ -47,7 +47,8 @@ public class Interactables_Home : MonoBehaviour
         if(transform.parent.parent.name == compareTag && pointsGiven == false)
         {
             pointsGiven = true;
-            pointsystem.add50Points();
+            //pointsystem.add50Points();
+            //pointsystem.playSound();
             Debug.Log(transform.parent.parent);
         }
         

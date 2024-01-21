@@ -1687,7 +1687,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &96321063
 GameObject:
   m_ObjectHideFlags: 0
@@ -1921,7 +1920,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &97682574
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3512,12 +3510,27 @@ PrefabInstance:
     - target: {fileID: 8968772698765172633, guid: 035de121a9f751246a036155637b1358,
         type: 3}
       propertyPath: m_Height
-      value: 1.2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8968772698765172634, guid: 035de121a9f751246a036155637b1358,
+        type: 3}
+      propertyPath: MinHeight
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 8968772698765172634, guid: 035de121a9f751246a036155637b1358,
         type: 3}
       propertyPath: MoveSpeed
       value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8968772698765172634, guid: 035de121a9f751246a036155637b1358,
+        type: 3}
+      propertyPath: CrouchSpeed
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8968772698765172634, guid: 035de121a9f751246a036155637b1358,
+        type: 3}
+      propertyPath: CrouchHeight
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8968772698765172634, guid: 035de121a9f751246a036155637b1358,
         type: 3}
@@ -3531,8 +3544,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8968772698765172634, guid: 035de121a9f751246a036155637b1358,
         type: 3}
+      propertyPath: CrouchMinHeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8968772698765172634, guid: 035de121a9f751246a036155637b1358,
+        type: 3}
       propertyPath: SmoothTurnSpeed
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8968772699145080096, guid: 035de121a9f751246a036155637b1358,
         type: 3}
@@ -4293,6 +4311,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Beer_lryra7_Var01 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2420159079012630170, guid: 259bb6c3ae2ea48498b675d5cd7262e2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3088890385046152224, guid: 259bb6c3ae2ea48498b675d5cd7262e2,
         type: 3}
       propertyPath: m_RootOrder
@@ -4625,7 +4648,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &178497845
 Transform:
   m_ObjectHideFlags: 0
@@ -5489,6 +5512,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5598313485320455085, guid: bfb07b14f1a4a1f44825b6f486c3b38b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfb07b14f1a4a1f44825b6f486c3b38b, type: 3}
@@ -6936,7 +6964,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &373135578
 GameObject:
   m_ObjectHideFlags: 0
@@ -8085,6 +8112,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PRE_PRO_Knife_01
       objectReference: {fileID: 0}
+    - target: {fileID: 154760, guid: 6166c8c7d0ca6e54eb84250bdb04a331, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 454760, guid: 6166c8c7d0ca6e54eb84250bdb04a331, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -8332,7 +8363,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &451516594
 GameObject:
   m_ObjectHideFlags: 0
@@ -8566,7 +8596,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &455369033
 GameObject:
   m_ObjectHideFlags: 0
@@ -9512,7 +9541,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &476159925
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10266,7 +10294,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &494100177
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10522,6 +10549,10 @@ PrefabInstance:
     - target: {fileID: 178930, guid: 295e34a039b0a9b42a5d0d5710607f26, type: 3}
       propertyPath: m_Name
       value: PRE_PRO_Knife_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 178930, guid: 295e34a039b0a9b42a5d0d5710607f26, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 478930, guid: 295e34a039b0a9b42a5d0d5710607f26, type: 3}
       propertyPath: m_RootOrder
@@ -14121,7 +14152,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &675595423 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5693873776126981213, guid: 3e5fd6b48d608f7428eafda357abafe8,
@@ -15880,7 +15910,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &744678313
 GameObject:
   m_ObjectHideFlags: 0
@@ -18102,7 +18131,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &883195831
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18188,6 +18216,10 @@ PrefabInstance:
     - target: {fileID: 137000, guid: ba650d4938f4ba9448889fb9f6d6b0aa, type: 3}
       propertyPath: m_Name
       value: PRE_PRO_Plate_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 137000, guid: ba650d4938f4ba9448889fb9f6d6b0aa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 437000, guid: ba650d4938f4ba9448889fb9f6d6b0aa, type: 3}
       propertyPath: m_RootOrder
@@ -18461,7 +18493,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &890773768
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19234,7 +19265,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &919775074
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19479,7 +19509,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-104258
+  m_Name: pb_Mesh30072
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -19838,7 +19868,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &944056238 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 124828, guid: 4b0657a170a253748a9a3581ba925c93,
@@ -20236,7 +20265,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &959631632
 GameObject:
   m_ObjectHideFlags: 0
@@ -20757,7 +20785,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &978269902 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 67095753828781632, guid: 52ff02104034e9f4a85bc9ec192be835,
@@ -20889,6 +20916,10 @@ PrefabInstance:
     - target: {fileID: 195006, guid: 8726ba0e3790ced44be28cf898f7f1c7, type: 3}
       propertyPath: m_Name
       value: PRE_PRO_Mug_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 195006, guid: 8726ba0e3790ced44be28cf898f7f1c7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 495006, guid: 8726ba0e3790ced44be28cf898f7f1c7, type: 3}
       propertyPath: m_RootOrder
@@ -21149,7 +21180,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &984070227 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 158774, guid: bb21994be4c3e4d44909f6f23e9f8d58,
@@ -21523,7 +21553,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &997071466
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21802,7 +21831,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &997158939
 GameObject:
   m_ObjectHideFlags: 0
@@ -22329,7 +22357,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &1015913359
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23074,7 +23101,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &1032787889
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23741,7 +23767,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &1057396822
 GameObject:
   m_ObjectHideFlags: 0
@@ -24138,7 +24163,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &1068387527
 GameObject:
   m_ObjectHideFlags: 0
@@ -24601,7 +24625,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &1072873898
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24685,6 +24708,10 @@ PrefabInstance:
     - target: {fileID: 130376, guid: ffc46ec22ee718441b7b62f58fc632df, type: 3}
       propertyPath: m_Name
       value: PRE_PRO_Shampoo_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 130376, guid: ffc46ec22ee718441b7b62f58fc632df, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 430376, guid: ffc46ec22ee718441b7b62f58fc632df, type: 3}
       propertyPath: m_RootOrder
@@ -24933,7 +24960,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &1078686906 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2973116195089880246, guid: 3b7af1bee6dbe7e4db8e18f9b585050d,
@@ -25400,7 +25426,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &1106137997
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26093,7 +26118,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &1121431784
 GameObject:
   m_ObjectHideFlags: 0
@@ -26136,6 +26160,10 @@ PrefabInstance:
     - target: {fileID: 106058, guid: 5eeaca8c791810640ac98dbeb6579518, type: 3}
       propertyPath: m_Name
       value: PRE_PRO_Toothbrush_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 106058, guid: 5eeaca8c791810640ac98dbeb6579518, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 406058, guid: 5eeaca8c791810640ac98dbeb6579518, type: 3}
       propertyPath: m_RootOrder
@@ -26565,6 +26593,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PRE_PRO_Plate_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 137000, guid: ba650d4938f4ba9448889fb9f6d6b0aa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 437000, guid: ba650d4938f4ba9448889fb9f6d6b0aa, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -26878,7 +26910,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &1160143964
 GameObject:
   m_ObjectHideFlags: 0
@@ -28053,7 +28084,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &1195868382
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28339,7 +28369,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &1200747815
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28679,7 +28708,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &1205569319 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 149432, guid: e273a71443300854cac1763a3881c167,
@@ -29022,7 +29050,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &1219168528
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29779,7 +29806,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &1231916873 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5693873776126981213, guid: 3e5fd6b48d608f7428eafda357abafe8,
@@ -29967,7 +29993,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &1233564728
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30228,6 +30253,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PRE_PRO_Face_cream_01
       objectReference: {fileID: 0}
+    - target: {fileID: 107066, guid: e9847ce8fd6deb04fb2792fd34805c86, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 407066, guid: e9847ce8fd6deb04fb2792fd34805c86, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -30475,7 +30504,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &1249656403
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30772,7 +30800,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &1263104350
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30783,6 +30810,10 @@ PrefabInstance:
     - target: {fileID: 137000, guid: ba650d4938f4ba9448889fb9f6d6b0aa, type: 3}
       propertyPath: m_Name
       value: PRE_PRO_Plate_01 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 137000, guid: ba650d4938f4ba9448889fb9f6d6b0aa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 437000, guid: ba650d4938f4ba9448889fb9f6d6b0aa, type: 3}
       propertyPath: m_RootOrder
@@ -31037,7 +31068,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &1264113853
 GameObject:
   m_ObjectHideFlags: 0
@@ -31689,7 +31719,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &1286205148
 GameObject:
   m_ObjectHideFlags: 0
@@ -32564,6 +32593,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PRE_PRO_Conditioner_01
       objectReference: {fileID: 0}
+    - target: {fileID: 174356, guid: 38d780e3da02e7e4383f8e20bc3ab96a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 474356, guid: 38d780e3da02e7e4383f8e20bc3ab96a, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -32811,7 +32844,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &1351482727
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34135,7 +34167,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &1388758054
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34552,7 +34583,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &1398506260
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35453,7 +35483,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &1426090757
 GameObject:
   m_ObjectHideFlags: 0
@@ -35566,7 +35595,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1429334770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35973,7 +36002,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1433499513
 Transform:
   m_ObjectHideFlags: 0
@@ -36293,7 +36322,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &1441685818
 GameObject:
   m_ObjectHideFlags: 0
@@ -36906,7 +36934,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &1501996422
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37185,7 +37212,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &1503570856
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37657,7 +37683,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &1523487632
 GameObject:
   m_ObjectHideFlags: 0
@@ -38368,6 +38393,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PRE_PRO_Cooking_pot_02_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 189350, guid: 34e58a6574c767c49bfedc46fd5f05d3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 489350, guid: 34e58a6574c767c49bfedc46fd5f05d3, type: 3}
       propertyPath: m_RootOrder
       value: 27
@@ -38618,7 +38647,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &1576610118
 GameObject:
   m_ObjectHideFlags: 0
@@ -39294,7 +39322,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &1600403681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39654,7 +39681,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &1613041673
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39980,7 +40006,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &1622053944
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40293,7 +40318,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &1623512828
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40385,6 +40409,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Teleportation_Anchor
+      objectReference: {fileID: 0}
+    - target: {fileID: 3277841232771335853, guid: 41a2db6845afc9e438babe34ba913dcc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41a2db6845afc9e438babe34ba913dcc, type: 3}
@@ -40679,7 +40708,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &1629385178 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 106058, guid: 5eeaca8c791810640ac98dbeb6579518,
@@ -40881,7 +40909,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &1633804256
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41339,7 +41366,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &1649329360
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41686,7 +41712,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &1658915099
 GameObject:
   m_ObjectHideFlags: 0
@@ -41864,6 +41889,10 @@ PrefabInstance:
     - target: {fileID: 104936, guid: cabc4682f44ec7f42ae2d7dbc0833290, type: 3}
       propertyPath: m_Name
       value: PRE_PRO_Deodorant_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 104936, guid: cabc4682f44ec7f42ae2d7dbc0833290, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 404936, guid: cabc4682f44ec7f42ae2d7dbc0833290, type: 3}
       propertyPath: m_RootOrder
@@ -42290,7 +42319,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &1674859545
 GameObject:
   m_ObjectHideFlags: 0
@@ -42652,7 +42680,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &1686399493
 GameObject:
   m_ObjectHideFlags: 0
@@ -42995,7 +43022,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &1712213320
 GameObject:
   m_ObjectHideFlags: 0
@@ -44308,6 +44334,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PRE_PRO_Mug_01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 195006, guid: 8726ba0e3790ced44be28cf898f7f1c7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 495006, guid: 8726ba0e3790ced44be28cf898f7f1c7, type: 3}
       propertyPath: m_RootOrder
       value: 24
@@ -44666,7 +44696,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &1778241867
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45351,7 +45380,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &1799991713
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46424,7 +46452,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &1822954923
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48240,7 +48267,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &1921109414 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8046497669056073141, guid: 64f35e946f50e324aa777eb219cfa2c3,
@@ -48428,7 +48454,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &1922339974
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49891,7 +49916,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &1961134268
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50270,7 +50294,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &1978739498
 GameObject:
   m_ObjectHideFlags: 0
@@ -50575,7 +50598,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &1992783825
 GameObject:
   m_ObjectHideFlags: 0
@@ -51591,7 +51613,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!114 &2031922165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51612,7 +51633,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &2037563350 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5693873776126981213, guid: 3e5fd6b48d608f7428eafda357abafe8,
@@ -51800,7 +51820,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &2038184600
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52059,7 +52078,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &2044561961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53121,7 +53139,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!4 &2089332463 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1157928709923595686, guid: 9c9b0b9371709014197c4cbcb83f2a4c,
@@ -53329,7 +53346,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &2092572675
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53608,7 +53624,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &2095841390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53870,7 +53885,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1001 &2099361628
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54554,7 +54568,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &2112183435
 GameObject:
   m_ObjectHideFlags: 0
@@ -55179,7 +55192,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &2130567325 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 195006, guid: 8726ba0e3790ced44be28cf898f7f1c7,
@@ -55381,7 +55393,6 @@ MonoBehaviour:
   pointsGiven: 0
   trigger: 0
   inCoroutine: 0
-  pointsystem: {fileID: 1429334770}
 --- !u!1 &2136579786
 GameObject:
   m_ObjectHideFlags: 0
