@@ -26,6 +26,10 @@ TagManager:
   - Pasta
   - Juice
   - Eggs
+  - Dishes
+  - Trash
+  - Clean
+  - Dirty
   layers:
   - Default
   - TransparentFX

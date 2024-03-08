@@ -8,7 +8,7 @@ public class Pointsystem : MonoBehaviour
 {
     public static int points;
     public TMP_Text pointsText;
-    private AudioSource audio;
+    private AudioSource a;
 
     // Start is called before the first frame update
     void Awake()
@@ -16,7 +16,7 @@ public class Pointsystem : MonoBehaviour
         Debug.Log("Awake Point System");
         points = 0;
         Debug.Log("Points: " + points);
-        audio = GetComponent<AudioSource>();
+        a = GetComponent<AudioSource>();
     }
 
     public int getPoints()
@@ -31,7 +31,7 @@ public class Pointsystem : MonoBehaviour
 
     public void playSound()
 	{
-        audio.Play();
+        a.Play();
 	}
 
     public void add50Points()

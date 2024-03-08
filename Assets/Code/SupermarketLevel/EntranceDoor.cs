@@ -45,15 +45,15 @@ public class EntranceDoor : MonoBehaviour
             }
         }
 
-        if (exitDoor)
-		{
-            if (rightDoor)
-			{
-                if (shoppingList.allItemsInCart)
-                {
-                    entrance.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-                }
-            }
-		}
+  //      if (exitDoor)
+		//{
+  //          if (rightDoor)
+		//	{
+  //              if (shoppingList.allItemsInCart)
+  //              {
+  //                  entrance.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+  //              }
+  //          }
+		//}
     }
 }

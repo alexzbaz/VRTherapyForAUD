@@ -28,14 +28,15 @@ public class TutorialObjects : MonoBehaviour
 
     void Start()
     {
-        trigger = true;
+        trigger = false;
         inCoroutine = false;
+        StartCoroutine(InitPosition());
         // centerCol = transform.position + GetComponent<SphereCollider>().center;
         // rSocket = socket.GetComponent<SphereCollider>().radius;
         // rCol = GetComponent<SphereCollider>().radius;
-        initPos = transform.position;
-        initRotation = transform.rotation;
-        initScale = transform.localScale;
+        //initPos = transform.position;
+        //initRotation = transform.rotation;
+        //initScale = transform.localScale;
         // dirToSocket = socket.transform.position - centerCol;
     }
 
@@ -78,15 +79,15 @@ public class TutorialObjects : MonoBehaviour
         }
     }
 
-	private void OnTriggerEnter(Collider other)
-	{
-		if (other.CompareTag(compareTag))
-		{
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag(compareTag) || other.CompareTag("Inventory"))
+        {
             pointsystem.add50Points();
         }
-	}
+    }
 
-	private void OnTriggerStay(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag(compareTag))
         {
@@ -116,7 +117,17 @@ public class TutorialObjects : MonoBehaviour
         }
     }
 
-    IEnumerator PositionReset()
+    IEnumerator InitPosition()
+    {
+        yield return new WaitForSeconds(1);
+        initPos = transform.position;
+        initRotation = transform.rotation;
+        initScale = transform.localScale;
+        trigger = true;
+    }
+
+
+        IEnumerator PositionReset()
     {
         Debug.Log("Start Coroutine");
         inCoroutine = true;
