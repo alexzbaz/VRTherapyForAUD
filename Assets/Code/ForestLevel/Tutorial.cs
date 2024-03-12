@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Tutorial : MonoBehaviour
 {
-    public GameObject toSetTrue;
-    public GameObject toSetFalse;
+    [SerializeField] private GameObject toSetTrue;
+    [SerializeField] private GameObject toSetFalse;
 
     private void OnTriggerExit(Collider other)
     {
