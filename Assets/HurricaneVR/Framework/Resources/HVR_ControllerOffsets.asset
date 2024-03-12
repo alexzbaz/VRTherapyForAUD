@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: HurricaneVR.Framework:HurricaneVR.Framework.Components:HVRControllerOffsets
   Oculus:
     Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 50, y: 0, z: 0}
+    Rotation: {x: 0, y: 0, z: 0}
   WMR:
     Position: {x: 0, y: 0, z: 0}
     Rotation: {x: 40, y: 0, z: 0}
@@ -23,7 +23,7 @@ MonoBehaviour:
     Rotation: {x: 10, y: 0, z: 0}
   OculusSteamVR:
     Position: {x: -0.001, y: -0.005, z: -0.05}
-    Rotation: {x: 50, y: 0, z: 0}
+    Rotation: {x: 40, y: 0, z: 0}
   WMRSteamVR:
     Position: {x: -0.0175, y: 0.01, z: -0.0725}
     Rotation: {x: 40, y: 0, z: 0}
@@ -41,7 +41,7 @@ MonoBehaviour:
     Rotation: {x: 60, y: 0, z: 0}
   OculusOpenXR:
     Position: {x: 0, y: 0, z: -0.06}
-    Rotation: {x: 50, y: 0, z: 0}
+    Rotation: {x: 0, y: 0, z: 0}
   WMROpenXR:
     Position: {x: 0, y: -0.02, z: -0.05}
     Rotation: {x: 20, y: 0, z: 0}
@@ -57,6 +57,3 @@ MonoBehaviour:
   KnucklesOpenXR:
     Position: {x: -0.01, y: -0.02, z: -0.05}
     Rotation: {x: 10, y: 0, z: 0}
-  PicoOpenXR:
-    Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0}
