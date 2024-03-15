@@ -6,36 +6,56 @@ using UnityEngine.AI;
 public class GoalPoint : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent agent;
-    [SerializeField] private List<Transform> target;
-    [SerializeField] private int distanceToTargetPoint;
-
+    [SerializeField] private List<Transform> targets;
+    [SerializeField] private float distanceToTargetPoint;
+    private int targetCounter = -1;
+    private bool targetReached = false;
     public bool walking = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(shoppingSimulation());
+        
     }
 
-    IEnumerator shoppingSimulation()
+    private void Update()
     {
-        if (target.Count > 0)
+        if (targets.Count > 0)
         {
-            agent.SetDestination(target[0].position);
-            walking = true;
-
-            for (int i = 0; i < target.Count; i++)
+            if (targetReached == false)
             {
-                Debug.Log("LOOP " + i);
-                if (Vector3.Distance(agent.transform.position, target[i].position) < distanceToTargetPoint)
-                {
-                    Debug.Log("IF" + i);
-                    walking = false;
-                    yield return new WaitForSeconds(5);
-                    agent.SetDestination(target[i + 1].position);
-                    walking = true;
-                }
+                StartCoroutine(Bot());
             }
         }
+    }
+
+    private IEnumerator Bot()
+    {
+        if (targetCounter == -1)
+        {
+            targetCounter++;
+            agent.SetDestination(targets[targetCounter].position);
+            walking = true;
+        }
+
+        if (Vector3.Distance(agent.transform.position, targets[targetCounter].position) < distanceToTargetPoint)
+        {
+            targetReached = true;
+            walking = false;
+            yield return new WaitForSeconds(3);
+            walking = true;
+            targetReached = false;
+            targetCounter++;
+            if (targetCounter < targets.Count)
+            {
+                agent.SetDestination(targets[targetCounter].position);
+            }
+            else
+            {
+                targetReached = true;
+                walking = false;
+            }
+        }
+        
     }
 }
