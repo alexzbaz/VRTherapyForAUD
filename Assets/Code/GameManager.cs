@@ -70,3 +70,12 @@ public enum HomeLevelCustomize
 	CLEAN,
 	DISPOSE
 }
+
+public enum AlcoholType
+{
+	BEER,
+	VODKA,
+	WHISKEY,
+	WINE,
+}
+
