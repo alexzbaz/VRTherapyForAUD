@@ -9,10 +9,18 @@ public class EntranceDoor : MonoBehaviour
     [SerializeField] private GameObject entrance;
 
     [SerializeField] private bool rightDoor; // Set in Editor
+    private Vector3 startRotation;
+    private Quaternion endRotationRight;
+    private Quaternion endRotationLeft;
     private bool doorOpened = false;
 
-	// Update is called once per frame
-	void Update()
+    private void Start()
+    {
+        startRotation = transform.rotation.eulerAngles;
+    }
+
+    // Update is called once per frame
+    void Update()
     {
         Collider[] doorColliders = Physics.OverlapSphere(transform.position, 2f, playerLayer);
         Collider[] npcColliders = Physics.OverlapSphere(transform.position, 1.5f, npcLayer);
