@@ -51,12 +51,14 @@ public class GoalPoint : MonoBehaviour
             targetCounter++;
             if (targetCounter < targets.Count)
             {
+                Debug.Log("TargetCounter < Count");
                 agent.SetDestination(targets[targetCounter].position);
             }
             else
             {
-                targetReached = true;
+                Debug.Log("Else");
                 walking = false;
+                targetCounter = -1; // Restart the route
             }
         }
         
