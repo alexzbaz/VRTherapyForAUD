@@ -9,15 +9,7 @@ public class EntranceDoor : MonoBehaviour
     [SerializeField] private GameObject entrance;
 
     [SerializeField] private bool rightDoor; // Set in Editor
-    private Vector3 startRotation;
-    private Quaternion endRotationRight;
-    private Quaternion endRotationLeft;
     private bool doorOpened = false;
-
-    private void Start()
-    {
-        startRotation = transform.rotation.eulerAngles;
-    }
 
     // Update is called once per frame
     void Update()
