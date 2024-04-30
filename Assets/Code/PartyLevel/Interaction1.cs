@@ -7,11 +7,14 @@ public class Interaction1 : MonoBehaviour
     [SerializeField] private Dictionary<int, AudioSource> interactionAudio;
     [SerializeField] private Dictionary<int, string> interactionText;
     private List<int> interactionFlow;
-    private float path;
     private InteractionSelection interactionSelection;
+    [SerializeField] private GameObject interactionCanvas;
+    [SerializeField] private GameObject interaction2;
+    public bool active;
 
-    void Start()
+    void Start() 
     {
+        active = true;
         interactionFlow = new List<int>();
         interactionText[1] = "Ausweichend: 'Ne, jemand sollte hier nüchtern bleiben.'";
         interactionText[2] = "Direkt: 'Ich enthalte mich für meine Gesundheit.'";
@@ -19,6 +22,7 @@ public class Interaction1 : MonoBehaviour
         interactionText[4] = "Direkt: 'Nein, danke, ich will nichts.'";
         interactionText[5] = "Ausweichend: 'Glaub mir, ein einziger Drink kann sehr schaden.'";
         interactionText[6] = "Direkt: 'Nein, heute nicht.'";
+        interactionCanvas.SetActive(true);
     }
 
     // Update is called once per frame
@@ -28,22 +32,12 @@ public class Interaction1 : MonoBehaviour
         {
             interactionSelection.setText(interactionText[1], interactionText[2], "");
         }
-        if (interactionFlow.Count > 0)
+
+        if (interactionFlow.Count == 2) // && interaction1 finished
         {
-            if (interactionFlow[0] == 1)
-            {
-                interactionSelection.setText(interactionText[3], interactionText[4], "");
-            }
-            else if (interactionFlow[0] == 2)
-            {
-                interactionSelection.setText(interactionText[5], interactionText[6], "");
-            }
-            else
-            {
-                Debug.LogError("Error Interaction1");
-            }
+            interaction2.SetActive(true);
+            active = false;
         }
-        
     }
 
     public void selectedOption(int option)
@@ -52,14 +46,22 @@ public class Interaction1 : MonoBehaviour
         if (option == 1)
         {
             // Play AudioSource
-        } else if (option == 2)
+            playAudioSource(1);
+            // After playing AudioSource
+            interactionSelection.setText(interactionText[3], interactionText[4], "");
+        }
+        else if (option == 2)
         {
             // Play AudioSource
+            playAudioSource(2);
+            // After playing AudioSource
+            interactionSelection.setText(interactionText[5], interactionText[6], "");
         }
     }
 
     public void playAudioSource(int audio)
     {
 
+        
     }
 }

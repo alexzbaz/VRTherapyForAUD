@@ -12,20 +12,38 @@ public class InteractionSelection : MonoBehaviour
     public Button option1;
     public Button option2;
     public Button option3;
-    private int interactionAmount;
+    private int interactionNumber;
     private Interaction1 interaction1;
+    private Interaction2 interaction2;
+    //private Interaction3 interaction3;
 
     // Start is called before the first frame update
     void Start()
     {
+        setNumberOfOptions();
         // Logic to get number of options in interactions
+    }
+
+    private void setNumberOfOptions()
+    {
+        if (interaction1.active)
+        {
+            interactionNumber = 2;
+            option3.enabled = false;
+        }
+        else
+        {
+            interactionNumber = 3;
+            option3.enabled = true;
+        }
     }
 
     public void setText(string interaction1, string interaction2, string interaction3)
     {
+        
         interactionOption1.text = interaction1;
         interactionOption2.text = interaction2;
-        if (interaction3 != "")
+        if (interactionNumber == 3)
         {
             interactionOption3.text = interaction3;
         }
