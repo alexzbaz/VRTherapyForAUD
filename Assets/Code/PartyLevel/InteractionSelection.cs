@@ -16,6 +16,8 @@ public class InteractionSelection : MonoBehaviour
     private Interaction1 interaction1;
     private Interaction2 interaction2;
     //private Interaction3 interaction3;
+    [SerializeField] private GameObject leftHand;
+    [SerializeField] private GameObject rightHand;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +42,7 @@ public class InteractionSelection : MonoBehaviour
 
     public void setText(string interaction1, string interaction2, string interaction3)
     {
-        
+        Debug.Log("Call Set Text in interactionSelection");
         interactionOption1.text = interaction1;
         interactionOption2.text = interaction2;
         if (interactionNumber == 3)

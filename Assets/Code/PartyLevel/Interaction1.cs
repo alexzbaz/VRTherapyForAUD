@@ -7,7 +7,7 @@ public class Interaction1 : MonoBehaviour
     [SerializeField] private Dictionary<int, AudioSource> interactionAudio;
     [SerializeField] private Dictionary<int, string> interactionText;
     private List<int> interactionFlow;
-    private InteractionSelection interactionSelection;
+    [SerializeField] private InteractionSelection interactionSelection;
     [SerializeField] private GameObject interactionCanvas;
     [SerializeField] private GameObject interaction2;
     public bool active;
@@ -16,12 +16,13 @@ public class Interaction1 : MonoBehaviour
     {
         active = true;
         interactionFlow = new List<int>();
-        interactionText[1] = "Ausweichend: 'Ne, jemand sollte hier nüchtern bleiben.'";
-        interactionText[2] = "Direkt: 'Ich enthalte mich für meine Gesundheit.'";
-        interactionText[3] = "Ausweichend: 'Nein, im Ernst. Ich trage hier die Verantwortung.'";
-        interactionText[4] = "Direkt: 'Nein, danke, ich will nichts.'";
-        interactionText[5] = "Ausweichend: 'Glaub mir, ein einziger Drink kann sehr schaden.'";
-        interactionText[6] = "Direkt: 'Nein, heute nicht.'";
+        interactionText = new Dictionary<int, string>();
+        interactionText[0] = "Ausweichend: 'Ne, jemand sollte hier nüchtern bleiben.'";
+        interactionText[1] = "Direkt: 'Ich enthalte mich für meine Gesundheit.'";
+        interactionText[2] = "Ausweichend: 'Nein, im Ernst. Ich trage hier die Verantwortung.'";
+        interactionText[3] = "Direkt: 'Nein, danke, ich will nichts.'";
+        interactionText[4] = "Ausweichend: 'Glaub mir, ein einziger Drink kann sehr schaden.'";
+        interactionText[5] = "Direkt: 'Nein, heute nicht.'";
         interactionCanvas.SetActive(true);
     }
 
@@ -30,7 +31,7 @@ public class Interaction1 : MonoBehaviour
     {
         if (interactionFlow.Count == 0)
         {
-            interactionSelection.setText(interactionText[1], interactionText[2], "");
+            interactionSelection.setText(interactionText[0], interactionText[1], "");
         }
 
         if (interactionFlow.Count == 2) // && interaction1 finished
@@ -42,20 +43,21 @@ public class Interaction1 : MonoBehaviour
 
     public void selectedOption(int option)
     {
+        Debug.Log("SELECTED OPTION: " + option);
         interactionFlow.Add(option);
         if (option == 1)
         {
             // Play AudioSource
             playAudioSource(1);
             // After playing AudioSource
-            interactionSelection.setText(interactionText[3], interactionText[4], "");
+            interactionSelection.setText(interactionText[2], interactionText[3], "");
         }
         else if (option == 2)
         {
             // Play AudioSource
             playAudioSource(2);
             // After playing AudioSource
-            interactionSelection.setText(interactionText[5], interactionText[6], "");
+            interactionSelection.setText(interactionText[4], interactionText[5], "");
         }
     }
 
