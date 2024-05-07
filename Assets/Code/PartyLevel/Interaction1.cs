@@ -7,8 +7,7 @@ public class Interaction1 : MonoBehaviour
     [SerializeField] private Dictionary<int, AudioSource> interactionAudio;
     [SerializeField] private Dictionary<int, string> interactionText;
     private List<int> interactionFlow;
-    [SerializeField] private InteractionSelection interactionSelection;
-    [SerializeField] private GameObject interactionCanvas;
+    [SerializeField] private InteractionManager interactionManager;
     [SerializeField] private GameObject interaction2;
     public bool active;
 
@@ -23,7 +22,6 @@ public class Interaction1 : MonoBehaviour
         interactionText[3] = "Direkt: 'Nein, danke, ich will nichts.'";
         interactionText[4] = "Ausweichend: 'Glaub mir, ein einziger Drink kann sehr schaden.'";
         interactionText[5] = "Direkt: 'Nein, heute nicht.'";
-        interactionCanvas.SetActive(true);
     }
 
     // Update is called once per frame
@@ -31,33 +29,35 @@ public class Interaction1 : MonoBehaviour
     {
         if (interactionFlow.Count == 0)
         {
-            interactionSelection.setText(interactionText[0], interactionText[1], "");
+            interactionManager.setText(interactionText[0], interactionText[1], "");
         }
 
         if (interactionFlow.Count == 2) // && interaction1 finished
         {
             interaction2.SetActive(true);
             active = false;
+            interactionManager.sequenceFinished(0);
         }
     }
 
+    // OnClick set in Editor
     public void selectedOption(int option)
     {
         Debug.Log("SELECTED OPTION: " + option);
         interactionFlow.Add(option);
-        if (option == 1)
+        if (option == 0)
         {
             // Play AudioSource
             playAudioSource(1);
             // After playing AudioSource
-            interactionSelection.setText(interactionText[2], interactionText[3], "");
+            interactionManager.setText(interactionText[2], interactionText[3], "");
         }
-        else if (option == 2)
+        else if (option == 1)
         {
             // Play AudioSource
             playAudioSource(2);
             // After playing AudioSource
-            interactionSelection.setText(interactionText[4], interactionText[5], "");
+            interactionManager.setText(interactionText[4], interactionText[5], "");
         }
     }
 
