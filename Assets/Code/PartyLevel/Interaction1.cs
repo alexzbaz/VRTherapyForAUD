@@ -13,7 +13,7 @@ public class Interaction1 : MonoBehaviour
 
     void Start() 
     {
-        active = true;
+        active = false;
         interactionFlow = new List<int>();
         interactionText = new Dictionary<int, string>();
         interactionText[0] = "Ausweichend: 'Ne, jemand sollte hier nüchtern bleiben.'";
@@ -32,7 +32,7 @@ public class Interaction1 : MonoBehaviour
             interactionManager.setText(interactionText[0], interactionText[1], "");
         }
 
-        if (interactionFlow.Count == 2) // && interaction1 finished
+        if (interactionFlow.Count == 2 && active) // && interaction1 finished
         {
             interaction2.SetActive(true);
             active = false;

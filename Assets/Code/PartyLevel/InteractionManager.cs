@@ -14,38 +14,35 @@ public class InteractionManager : MonoBehaviour
     public Button option3;
     private int interactionNumber;
     private Interaction1 interaction1;
-    private Interaction2 interaction2;
+    //private Interaction2 interaction2;
     //private Interaction3 interaction3;
 
-    private List<Canvas> uis;
-    [SerializeField] private Canvas ui1;
-    [SerializeField] private Canvas ui2;
-    [SerializeField] private Canvas ui3;
+    private List<Canvas> interactionCanvasList;
+    [SerializeField] private Canvas interactionCanvas1;
+    [SerializeField] private Canvas interactionCanvas2;
+    [SerializeField] private Canvas interactionCanvas3;
 
-    private List<GameObject> interactionAnchors;
+    private List<GameObject> interactionAnchorsList;
     [SerializeField] private GameObject interactionAnchor1;
     [SerializeField] private GameObject interactionAnchor2;
     [SerializeField] private GameObject interactionAnchor3;
 
-
-
     // Start is called before the first frame update
     void Start()
     {
-        interactionAnchors = new List<GameObject>();
-        interactionAnchors[0] = interactionAnchor1;
-        interactionAnchors[1] = interactionAnchor2;
-        interactionAnchors[2] = interactionAnchor3;
+        interactionAnchorsList = new List<GameObject>();
+        interactionAnchorsList.Add(interactionAnchor1);
+       // interactionAnchors[1] = interactionAnchor2;
+        //interactionAnchors[2] = interactionAnchor3;
 
-        uis = new List<Canvas>();
-        uis[0] = ui1;
-        uis[1] = ui2;
-        uis[2] = ui3;
+        interactionCanvasList = new List<Canvas>();
+        interactionCanvasList.Add(interactionCanvas1);
+        //uis.Add(ui2);
+        //uis.Add(ui3);
     }
 
     public void setText(string interaction1, string interaction2, string interaction3)
     {
-        Debug.Log("Call Set Text in interactionSelection");
         interactionOption1.text = interaction1;
         interactionOption2.text = interaction2;
         if (interactionNumber == 3)
@@ -65,23 +62,25 @@ public class InteractionManager : MonoBehaviour
         {
             interaction1.selectedOption(2);
         }
-        else if (button == option3)
-        {
-            interaction1.selectedOption(3);
-        }
+        //else if (button == option3)
+        //{
+           // interaction1.selectedOption(3);
+        //}
         else
         {
             Debug.LogError("Error Wrong Button");
         }
     }
 
+    // activate following Anchor
+    // set logic for finish (last sequence done)
     public void sequenceFinished(int sequenceNumber)
     {
-        interactionAnchors[sequenceNumber].SetActive(false);
-        uis[sequenceNumber].enabled = false;
-        if (sequenceNumber <= interactionAnchors.Count)
+        interactionAnchorsList[sequenceNumber].SetActive(false);
+        interactionCanvasList[sequenceNumber].enabled = false;
+        if (sequenceNumber <= interactionAnchorsList.Count)
         {
-            interactionAnchors[sequenceNumber + 1].SetActive(true);
+            interactionAnchorsList[sequenceNumber + 1].SetActive(true);
         }
     }
 
