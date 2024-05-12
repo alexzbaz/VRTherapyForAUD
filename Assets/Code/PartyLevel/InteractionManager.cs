@@ -6,16 +6,29 @@ using TMPro;
 
 public class InteractionManager : MonoBehaviour
 {
-    public TMP_Text interactionOption1;
-    public TMP_Text interactionOption2;
-    public TMP_Text interactionOption3;
-    public Button option1;
-    public Button option2;
-    public Button option3;
-    private int interactionNumber;
+    public TMP_Text interaction1Option1;
+    public TMP_Text interaction1Option2;
+    public TMP_Text interaction2Option1;
+    public TMP_Text interaction2Option2;
+    public TMP_Text interaction2Option3;
+    public TMP_Text interaction3Option1;
+    public TMP_Text interaction3Option2;
+    public TMP_Text interaction3Option3;
+
+    public Button interaction1Button1;
+    public Button interaction1Button2;
+    public Button interaction2Button1;
+    public Button interaction2Button2;
+    public Button interaction2Button3;
+    public Button interaction3Button1;
+    public Button interaction3Button2;
+    public Button interaction3Button3;
+
     private Interaction1 interaction1;
-    //private Interaction2 interaction2;
-    //private Interaction3 interaction3;
+    private Interaction2 interaction2;
+    private Interaction3 interaction3;
+
+    private int currentInteraction;
 
     private List<Canvas> interactionCanvasList;
     [SerializeField] private Canvas interactionCanvas1;
@@ -30,60 +43,108 @@ public class InteractionManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentInteraction = 0;
+
         interactionAnchorsList = new List<GameObject>();
         interactionAnchorsList.Add(interactionAnchor1);
-       // interactionAnchors[1] = interactionAnchor2;
+        interactionAnchorsList.Add(interactionAnchor2);
         //interactionAnchors[2] = interactionAnchor3;
 
         interactionCanvasList = new List<Canvas>();
         interactionCanvasList.Add(interactionCanvas1);
-        //uis.Add(ui2);
+        interactionCanvasList.Add(interactionCanvas2);
         //uis.Add(ui3);
     }
 
     public void setText(string interaction1, string interaction2, string interaction3)
     {
-        interactionOption1.text = interaction1;
-        interactionOption2.text = interaction2;
-        if (interactionNumber == 3)
+       // Debug.Log("Set Text: " + interaction1);
+        if (currentInteraction == 0)
         {
-            interactionOption3.text = interaction3;
+            Debug.Log("First if");
+            interaction1Option1.text = interaction1;
+            interaction1Option2.text = interaction2;
+        }
+        else if (currentInteraction == 1)
+        {
+            interaction2Option1.text = interaction1;
+            interaction2Option2.text = interaction2;
+            interaction2Option3.text = interaction3;
+        }
+        else if (currentInteraction == 2)
+        {
+            interaction3Option1.text = interaction1;
+            interaction3Option2.text = interaction2;
+            interaction3Option3.text = interaction3;
         }
     }
 
     // Connect this function to the buttons
     public void selectOption(Button button)
     {
-        if (button == option1)
+        if (currentInteraction == 0)
         {
-            interaction1.selectedOption(1);
+            if (button == interaction1Button1)
+            {
+                interaction1.selectedOption(1);
+            }
+            else if (button == interaction1Button2)
+            {
+                interaction1.selectedOption(2);
+            }
         }
-        else if (button == option2)
+        else if (currentInteraction == 1)
         {
-            interaction1.selectedOption(2);
+            if (button == interaction2Button1)
+            {
+                interaction2.selectedOption(1);
+            }
+            else if (button == interaction2Button2)
+            {
+                interaction2.selectedOption(2);
+            }
+            else if (button == interaction2Button3)
+            {
+                interaction2.selectedOption(3);
+            }
         }
-        //else if (button == option3)
-        //{
-           // interaction1.selectedOption(3);
-        //}
+        else if (currentInteraction == 2)
+        {
+            if (button == interaction3Button1)
+            {
+                interaction3.selectedOption(1);
+            }
+            else if (button == interaction3Button2)
+            {
+                interaction3.selectedOption(2);
+            }
+            else if (button == interaction3Button3)
+            {
+                interaction3.selectedOption(3);
+            }
+        }
         else
         {
             Debug.LogError("Error Wrong Button");
         }
     }
 
-    // activate following Anchor
     // set logic for finish (last sequence done)
+    // get new buttons and options
     public void sequenceFinished(int sequenceNumber)
     {
+        Debug.Log("sequence finished " + sequenceNumber);
         interactionAnchorsList[sequenceNumber].SetActive(false);
         interactionCanvasList[sequenceNumber].enabled = false;
         if (sequenceNumber <= interactionAnchorsList.Count)
         {
+            currentInteraction += 1;
             interactionAnchorsList[sequenceNumber + 1].SetActive(true);
+            if (currentInteraction == 1)
+            {
+                interaction2.active = true;
+            }
         }
     }
-
-
 
 }

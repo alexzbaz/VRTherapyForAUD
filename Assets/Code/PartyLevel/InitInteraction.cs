@@ -7,12 +7,9 @@ using UnityEngine;
 public class InitInteraction : MonoBehaviour
 {
     [SerializeField] private Canvas ui;
-    private Interaction1 interaction1;
-    private int interactionNumber;
 
     private void Start()
     {
-        interactionNumber = 1;
         ui.enabled = false;
     }
 

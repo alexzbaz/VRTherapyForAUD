@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class Interaction1 : MonoBehaviour
 {
-    [SerializeField] private Dictionary<int, AudioSource> interactionAudio;
-    [SerializeField] private Dictionary<int, string> interactionText;
+    private Dictionary<int, AudioSource> interactionAudio;
+    private Dictionary<int, string> interactionText;
     private List<int> interactionFlow;
     [SerializeField] private InteractionManager interactionManager;
-    [SerializeField] private GameObject interaction2;
     public bool active;
 
     void Start() 
@@ -34,7 +33,6 @@ public class Interaction1 : MonoBehaviour
 
         if (interactionFlow.Count == 2 && active) // && interaction1 finished
         {
-            interaction2.SetActive(true);
             active = false;
             interactionManager.sequenceFinished(0);
         }
