@@ -17,13 +17,9 @@ public class InitInteraction : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Start Dialogue");
+            Debug.Log("Start Dialogue " + ui.name);
             ui.enabled = true;
         }
     }
 
-    public void disableUi()
-    {
-        ui.enabled = false;
-    }
 }

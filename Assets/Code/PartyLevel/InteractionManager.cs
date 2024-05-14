@@ -28,7 +28,7 @@ public class InteractionManager : MonoBehaviour
     private Interaction2 interaction2;
     private Interaction3 interaction3;
 
-    private int currentInteraction;
+    public int currentInteraction;
 
     private List<Canvas> interactionCanvasList;
     [SerializeField] private Canvas interactionCanvas1;
@@ -48,17 +48,21 @@ public class InteractionManager : MonoBehaviour
         interactionAnchorsList = new List<GameObject>();
         interactionAnchorsList.Add(interactionAnchor1);
         interactionAnchorsList.Add(interactionAnchor2);
-        //interactionAnchors[2] = interactionAnchor3;
+        interactionAnchorsList.Add(interactionAnchor3);
 
         interactionCanvasList = new List<Canvas>();
         interactionCanvasList.Add(interactionCanvas1);
         interactionCanvasList.Add(interactionCanvas2);
-        //uis.Add(ui3);
+        interactionCanvasList.Add(interactionCanvas3);
+
+        interactionCanvas1.enabled = false;
+        interactionCanvas2.enabled = false;
+        interactionCanvas3.enabled = false;
     }
 
     public void setText(string interaction1, string interaction2, string interaction3)
     {
-       // Debug.Log("Set Text: " + interaction1);
+        Debug.Log("Set Text: " + currentInteraction);
         if (currentInteraction == 0)
         {
             Debug.Log("First if");
@@ -139,11 +143,8 @@ public class InteractionManager : MonoBehaviour
         if (sequenceNumber <= interactionAnchorsList.Count)
         {
             currentInteraction += 1;
+            Debug.Log("Sequence Finished - current interaction: " + currentInteraction);
             interactionAnchorsList[sequenceNumber + 1].SetActive(true);
-            if (currentInteraction == 1)
-            {
-                interaction2.active = true;
-            }
         }
     }
 
