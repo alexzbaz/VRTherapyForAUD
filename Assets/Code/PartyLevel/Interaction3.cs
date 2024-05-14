@@ -60,8 +60,11 @@ public class Interaction3 : MonoBehaviour
         // Third answer - Direkt
         interactionText[2] = "";
         interactionText[2] = "";
+    }
 
-        if (interactionFlow.Count == 0 && interactionManager.currentInteraction == 2)
+    public void setFirstInteraction()
+    {
+        if (interactionFlow.Count == 0 && interactionManager.currentInteraction == 1)
         {
             Debug.Log("interactionFlow.Count == 0" + interactionFlow.Count);
             interactionManager.setText(interactionText[0], interactionText[1], interactionText[2]);

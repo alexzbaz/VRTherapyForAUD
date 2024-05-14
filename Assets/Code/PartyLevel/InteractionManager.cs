@@ -24,9 +24,9 @@ public class InteractionManager : MonoBehaviour
     public Button interaction3Button2;
     public Button interaction3Button3;
 
-    private Interaction1 interaction1;
-    private Interaction2 interaction2;
-    private Interaction3 interaction3;
+    [SerializeField] private Interaction1 interaction1;
+    [SerializeField] private Interaction2 interaction2;
+    [SerializeField] private Interaction3 interaction3;
 
     public int currentInteraction;
 
@@ -90,41 +90,43 @@ public class InteractionManager : MonoBehaviour
         {
             if (button == interaction1Button1)
             {
-                interaction1.selectedOption(1);
+                Debug.Log("interaction1Button1");
+                interaction1.selectedOption(0);
             }
             else if (button == interaction1Button2)
             {
-                interaction1.selectedOption(2);
+                Debug.Log("interaction1Button2");
+                interaction1.selectedOption(1);
             }
         }
         else if (currentInteraction == 1)
         {
             if (button == interaction2Button1)
             {
-                interaction2.selectedOption(1);
+                interaction2.selectedOption(0);
             }
             else if (button == interaction2Button2)
             {
-                interaction2.selectedOption(2);
+                interaction2.selectedOption(1);
             }
             else if (button == interaction2Button3)
             {
-                interaction2.selectedOption(3);
+                interaction2.selectedOption(2);
             }
         }
         else if (currentInteraction == 2)
         {
             if (button == interaction3Button1)
             {
-                interaction3.selectedOption(1);
+                interaction3.selectedOption(0);
             }
             else if (button == interaction3Button2)
             {
-                interaction3.selectedOption(2);
+                interaction3.selectedOption(1);
             }
             else if (button == interaction3Button3)
             {
-                interaction3.selectedOption(3);
+                interaction3.selectedOption(2);
             }
         }
         else
@@ -137,14 +139,20 @@ public class InteractionManager : MonoBehaviour
     // get new buttons and options
     public void sequenceFinished(int sequenceNumber)
     {
-        Debug.Log("sequence finished " + sequenceNumber);
         interactionAnchorsList[sequenceNumber].SetActive(false);
         interactionCanvasList[sequenceNumber].enabled = false;
         if (sequenceNumber <= interactionAnchorsList.Count)
         {
             currentInteraction += 1;
-            Debug.Log("Sequence Finished - current interaction: " + currentInteraction);
             interactionAnchorsList[sequenceNumber + 1].SetActive(true);
+            if (currentInteraction == 1)
+            {
+                interaction2.setFirstInteraction();
+            }
+            if (currentInteraction == 2)
+            {
+                interaction3.setFirstInteraction();
+            }
         }
     }
 

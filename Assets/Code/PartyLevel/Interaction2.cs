@@ -36,7 +36,10 @@ public class Interaction2 : MonoBehaviour
         interactionText[11] = "[Gespräch beenden.]";
         interactionText[12] = "Annehmend: 'Aber nur ein Drink, klar?'";
         // If option 12: Finished - Deduction of Points
+    }
 
+    public void setFirstInteraction()
+    {
         if (interactionFlow.Count == 0 && interactionManager.currentInteraction == 1)
         {
             Debug.Log("interactionFlow.Count == 0" + interactionFlow.Count);
