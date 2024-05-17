@@ -51,17 +51,11 @@ public class Interaction2 : MonoBehaviour
     public void selectedOption(int option)
     {
         interactionFlow.Add(option);
-        // Finish Sequence
-        if (interactionFlow.Count == 2)
-        {
-            interactionManager.sequenceFinished(0);
-        }
-
 
         // First Button pressed
         if (option == 0)
         {
-            if (interactionFlow.Count == 1) // text 0
+            if (interactionFlow.Count == 1) // clicked on text 0
             {
                 // Play AudioSource
                 playAudioSource(1);

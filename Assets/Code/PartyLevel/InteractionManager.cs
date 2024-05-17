@@ -62,7 +62,17 @@ public class InteractionManager : MonoBehaviour
 
     public void setText(string interaction1, string interaction2, string interaction3)
     {
-        Debug.Log("Set Text: " + currentInteraction);
+        if (interaction3 == "")
+        {
+            interaction2Button3.enabled = false;
+            interaction3Button3.enabled = false;
+        }
+        else
+        {
+            interaction2Button3.enabled = true;
+            interaction3Button3.enabled = true;
+        }
+
         if (currentInteraction == 0)
         {
             Debug.Log("First if");
