@@ -7,7 +7,9 @@ public class Interaction2 : MonoBehaviour
     private Dictionary<int, AudioSource> interactionAudio;
     private Dictionary<int, string> interactionText;
     private List<int> interactionFlow;
+
     [SerializeField] private InteractionManager interactionManager;
+    [SerializeField] private Pointsystem pointsystem;
 
     // Start is called before the first frame update
     void Start()

@@ -7,6 +7,7 @@ using UnityEngine;
 public class InitInteraction : MonoBehaviour
 {
     [SerializeField] private Canvas ui;
+    public Interaction3 interaction3; // Remove after testing
 
     private void Start()
     {
@@ -19,6 +20,7 @@ public class InitInteraction : MonoBehaviour
         {
             Debug.Log("Start Dialogue " + ui.name);
             ui.enabled = true;
+            interaction3.setFirstInteraction();
         }
     }
 

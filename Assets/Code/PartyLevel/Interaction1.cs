@@ -8,7 +8,9 @@ public class Interaction1 : MonoBehaviour
     private Dictionary<int, AudioSource> interactionAudio;
     private Dictionary<int, string> interactionText;
     private List<int> interactionFlow;
+
     [SerializeField] private InteractionManager interactionManager;
+    [SerializeField] private Pointsystem pointsystem;
 
     void Start() 
     {
@@ -34,29 +36,20 @@ public class Interaction1 : MonoBehaviour
     public void selectedOption(int option)
     {
         interactionFlow.Add(option);
-        Debug.Log("interactionFlow.Count: " + interactionFlow.Count);
-        foreach (int item in interactionFlow)
-        {
-            Debug.Log("Item: " + item);
-        }
-        
-        // Finish Sequence
-        if (interactionFlow.Count == 2)
-        {
-            interactionManager.sequenceFinished(0);
-        }
-
 
         // First Button pressed
         if (option == 0)
         {
             if (interactionFlow.Count == 1)
             {
-                Debug.Log("Interaction 1: Count 1");
-
+                pointsystem.add50Points();
                 // Play AudioSource
                 playAudioSource(1);
                 interactionManager.setText(interactionText[2], interactionText[3], "");
+            }
+            if (interactionFlow.Count == 2)
+            {
+                interactionManager.sequenceFinished(0);
             }
         }
         // Second Button pressed
@@ -64,10 +57,14 @@ public class Interaction1 : MonoBehaviour
         {
             if (interactionFlow.Count == 1)
             {
-                Debug.Log("Interaction 1: Count 1");
+                pointsystem.add50Points();
                 // Play AudioSource
                 playAudioSource(1);
                 interactionManager.setText(interactionText[4], interactionText[5], "");
+            }
+            if (interactionFlow.Count == 2)
+            {
+                interactionManager.sequenceFinished(0);
             }
         }
     }

@@ -8,13 +8,13 @@ public class Interaction3 : MonoBehaviour
     private Dictionary<int, string> interactionText;
     private List<int> interactionFlow; // Keys of the selected interactions
     private int interactionLevel;
+
     [SerializeField] private InteractionManager interactionManager;
-    public bool active;
+    [SerializeField] private Pointsystem pointsystem;
 
     // Start is called before the first frame update
     void Start()
     {
-        active = false;
         interactionLevel = 0;
         interactionFlow = new List<int>();
         interactionText = new Dictionary<int, string>();
@@ -74,7 +74,7 @@ public class Interaction3 : MonoBehaviour
 
     public void setFirstInteraction()
     {
-        if (interactionLevel == 0 && interactionManager.currentInteraction == 2)
+        if (interactionLevel == 0) //&& interactionManager.currentInteraction == 2) Add back after testing
         {
             interactionManager.setText(interactionText[0], interactionText[1], ""); // Set Text for Level 0
         }

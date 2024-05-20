@@ -43,7 +43,7 @@ public class InteractionManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentInteraction = 0;
+        currentInteraction = 2; // Set back to 0 after testing
 
         interactionAnchorsList = new List<GameObject>();
         interactionAnchorsList.Add(interactionAnchor1);
@@ -64,18 +64,23 @@ public class InteractionManager : MonoBehaviour
     {
         if (interaction3 == "")
         {
-            interaction2Button3.enabled = false;
-            interaction3Button3.enabled = false;
+            interaction2Button3.GetComponent<Button>().enabled = false;
+            interaction2Button3.GetComponent<Image>().enabled = false;
+
+            interaction3Button3.GetComponent<Button>().enabled = false;
+            interaction3Button3.GetComponent<Image>().enabled = false;
         }
         else
         {
-            interaction2Button3.enabled = true;
-            interaction3Button3.enabled = true;
+            interaction2Button3.GetComponent<Button>().enabled = true;
+            interaction2Button3.GetComponent<Image>().enabled = true;
+
+            interaction3Button3.GetComponent<Button>().enabled = true;
+            interaction3Button3.GetComponent<Image>().enabled = true;
         }
 
         if (currentInteraction == 0)
         {
-            Debug.Log("First if");
             interaction1Option1.text = interaction1;
             interaction1Option2.text = interaction2;
         }
