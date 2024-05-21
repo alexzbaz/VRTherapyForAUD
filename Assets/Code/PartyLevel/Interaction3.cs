@@ -89,32 +89,37 @@ public class Interaction3 : MonoBehaviour
             if (interactionLevel == 0) // clicked on text 0
             {
                 interactionFlow.Add(0);
+                pointsystem.add50Points();
                 // Play AudioSource
                 playAudioSource(1);
                 interactionManager.setText(interactionText[2], interactionText[3], interactionText[4]);
             }
             else if (interactionLevel == 1) // clicked on text 2
             {
+                pointsystem.add50Points();
                 interactionFlow.Add(2);
                 playAudioSource(1);
                 interactionManager.setText(interactionText[5], interactionText[6], "");
             }
-            else if (interactionLevel == 2) // clicked on text 5 || text 12
+            else if (interactionLevel == 2) // clicked on text 5 || text 12 || text 24
             {
-                if (interactionFlow[2] == 2) // text 5
+                if (interactionFlow[1] == 2) // text 5
                 {
+                    pointsystem.deduct50Points();
                     interactionFlow.Add(5);
                     playAudioSource(1);
                     interactionManager.sequenceFinished(2);
                 }
-                else if (interactionFlow[2] == 3) // text 12
+                else if (interactionFlow[1] == 3) // text 12
                 {
+                    pointsystem.add50Points();
                     interactionFlow.Add(12);
                     playAudioSource(0);
                     interactionManager.setText(interactionText[14], interactionText[15], "");
                 }
-                else if (interactionFlow[2] == 4)
+                else if (interactionFlow[1] == 4) // text 24
                 {
+                    pointsystem.add200Points();
                     interactionFlow.Add(24);
                     playAudioSource(0);
                     interactionManager.sequenceFinished(2);
@@ -122,13 +127,14 @@ public class Interaction3 : MonoBehaviour
             }
             else if (interactionLevel == 3) // clicked on text 7 || text 14
             {
-                if (interactionFlow[2] == 6)
+                if (interactionFlow[2] == 6) // text 7
                 {
+                    pointsystem.deduct50Points();
                     interactionFlow.Add(7);
                     playAudioSource(1);
                     interactionManager.sequenceFinished(2);
                 }
-                else if (interactionFlow[1] == 3)
+                else if (interactionFlow[1] == 3) // text 14
                 {
                     interactionFlow.Add(14);
                     playAudioSource(1);
@@ -138,30 +144,44 @@ public class Interaction3 : MonoBehaviour
             }
             else if (interactionLevel == 4) // clicked on text 10
             {
-                if (interactionFlow[3] == 8)
+                if (interactionFlow[3] == 8) // text 10
                 {
+                    pointsystem.deduct50Points(); 
                     interactionFlow.Add(10);
                     playAudioSource(1);
                     interactionManager.sequenceFinished(2);
                 }
-                else if (interactionFlow[3] == 15)
+                else if (interactionFlow[3] == 14) // text 16
+                {
+                    pointsystem.add50Points();
+                    interactionFlow.Add(16);
+                    playAudioSource(1);
+                    interactionManager.setText(interactionText[18], interactionText[19], "");
+                }
+                else if (interactionFlow[3] == 15) // text 20
                 {
                     interactionFlow.Add(20);
                     playAudioSource(1);
-                    interactionManager.sequenceFinished(2);
+                    interactionManager.setText(interactionText[22], interactionText[23], "");
+
                 }
             }
             else if (interactionLevel == 5)
             {
-                interactionFlow.Add(18);
-                playAudioSource(1);
-                interactionManager.sequenceFinished(2);
-            }
-            else if (interactionLevel == 6)
-            {
-                interactionFlow.Add(22);
-                playAudioSource(1);
-                interactionManager.sequenceFinished(2); // Deduction of points
+                if (interactionFlow[4] == 16 || interactionFlow[4] == 17) // text 18
+                {
+                    pointsystem.deduct50Points();
+                    interactionFlow.Add(18);
+                    playAudioSource(1);
+                    interactionManager.sequenceFinished(2);
+                }
+                if (interactionFlow[4] == 20 || interactionFlow[4] == 21) // text 22
+                {
+                    pointsystem.deduct50Points();
+                    interactionFlow.Add(22);
+                    playAudioSource(1);
+                    interactionManager.sequenceFinished(2);
+                }
             }
         }
 
@@ -171,32 +191,37 @@ public class Interaction3 : MonoBehaviour
             if (interactionLevel == 0) // clicked on text 1
             {
                 interactionFlow.Add(1);
+                pointsystem.add50Points();
                 // Play AudioSource
                 playAudioSource(1);
                 interactionManager.setText(interactionText[2], interactionText[3], interactionText[4]);
             }
             else if (interactionLevel == 1) // clicked on text 3
             {
+                pointsystem.add50Points();
                 interactionFlow.Add(3);
                 playAudioSource(1);
                 interactionManager.setText(interactionText[12], interactionText[13], "");
             }
             else if (interactionLevel == 2) // clicked on text 6 || text 13
             {
-                if (interactionFlow[2] == 2)
+                if (interactionFlow[1] == 2)
                 {
+                    pointsystem.add50Points();
                     interactionFlow.Add(6);
                     playAudioSource(1);
                     interactionManager.setText(interactionText[7], interactionText[8], interactionText[9]);
                 }
-                else if (interactionFlow[2] == 3)
+                else if (interactionFlow[1] == 3)
                 {
+                    pointsystem.add50Points();
                     interactionFlow.Add(13);
                     playAudioSource(0);
                     interactionManager.setText(interactionText[14], interactionText[15], "");
                 }
-                else if (interactionFlow[2] == 4)
+                else if (interactionFlow[1] == 4)
                 {
+                    pointsystem.add200Points();
                     interactionFlow.Add(25);
                     playAudioSource(0);
                     interactionManager.sequenceFinished(2);
@@ -204,30 +229,60 @@ public class Interaction3 : MonoBehaviour
             }
             else if (interactionLevel == 3) // clicked on text 15
             {
-                interactionFlow.Add(15);
-                playAudioSource(1);
-                interactionManager.setText(interactionText[20], interactionText[21], "");
-            }
-            else if (interactionLevel == 4) // clicked on text 17
-            {
-                if (interactionFlow[3] == 14) // 17 || 21
+                if (interactionFlow[2] == 6) // text 8
                 {
+                    pointsystem.add50Points();
+                    interactionFlow.Add(8);
+                    playAudioSource(1);
+                    interactionManager.setText(interactionText[10], interactionText[11], "");
+                }
+                else if (interactionFlow[2] == 12 || interactionFlow[2] == 13)
+                {
+                    pointsystem.add50Points();
+                    interactionFlow.Add(15);
+                    playAudioSource(1);
+                    interactionManager.setText(interactionText[20], interactionText[21], "");
+                }
+            }
+            else if (interactionLevel == 4) // clicked on text 11 || 17 || 21
+            {
+                if (interactionFlow[3] == 8) // text 11
+                {
+                    pointsystem.deduct50Points();
+                    interactionFlow.Add(11);
+                    interactionManager.sequenceFinished(2);
+                }
+                if (interactionFlow[3] == 14) // 17
+                {
+                    pointsystem.add50Points();
                     interactionFlow.Add(17);
                     playAudioSource(1);
                     interactionManager.setText(interactionText[18], interactionText[19], "");
                 }
-                else if (interactionFlow[3] == 15)
+                else if (interactionFlow[3] == 15) // 21
                 {
+                    pointsystem.add50Points();
                     interactionFlow.Add(21);
                     playAudioSource(1);
-                    interactionManager.sequenceFinished(2);
+                    interactionManager.setText(interactionText[22], interactionText[23], "");
                 }
             }
             else if (interactionLevel == 5) // clicked on text 19
             {
-                interactionFlow.Add(19);
-                playAudioSource(1);
-                interactionManager.sequenceFinished(2);
+                if (interactionFlow[4] == 16 || interactionFlow[4] == 17)
+                {
+                    pointsystem.add50Points(); // text 19
+                    interactionFlow.Add(19);
+                    playAudioSource(1);
+                    interactionManager.sequenceFinished(2);
+                }
+                else if (interactionFlow[4] == 20 || interactionFlow[4] == 21)
+                {
+                    pointsystem.add50Points();
+                    interactionFlow.Add(18);
+                    playAudioSource(1);
+                    interactionManager.sequenceFinished(2);
+                }
             }
             else if (interactionLevel == 6)
             {
@@ -241,6 +296,7 @@ public class Interaction3 : MonoBehaviour
             if (interactionLevel == 1) // clicked on text 4
             {
                 interactionFlow.Add(4);
+                pointsystem.add100Points();
                 playAudioSource(1);
                 interactionManager.setText(interactionText[24], interactionText[25], "");
             }

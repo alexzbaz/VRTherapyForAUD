@@ -156,7 +156,7 @@ public class InteractionManager : MonoBehaviour
     {
         interactionAnchorsList[sequenceNumber].SetActive(false);
         interactionCanvasList[sequenceNumber].enabled = false;
-        if (sequenceNumber <= interactionAnchorsList.Count)
+        if (sequenceNumber < interactionAnchorsList.Count - 1)
         {
             currentInteraction += 1;
             interactionAnchorsList[sequenceNumber + 1].SetActive(true);
