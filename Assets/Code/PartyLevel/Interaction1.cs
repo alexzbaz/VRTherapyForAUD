@@ -49,6 +49,7 @@ public class Interaction1 : MonoBehaviour
             }
             if (interactionFlow.Count == 2)
             {
+                pointsystem.add50Points();
                 interactionManager.sequenceFinished(0);
             }
         }
@@ -64,6 +65,7 @@ public class Interaction1 : MonoBehaviour
             }
             if (interactionFlow.Count == 2)
             {
+                pointsystem.add50Points();
                 interactionManager.sequenceFinished(0);
             }
         }
