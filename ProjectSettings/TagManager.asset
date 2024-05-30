@@ -30,6 +30,7 @@ TagManager:
   - Trash
   - Clean
   - Dirty
+  - Book
   layers:
   - Default
   - TransparentFX
