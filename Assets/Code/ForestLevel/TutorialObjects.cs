@@ -7,7 +7,7 @@ public class TutorialObjects : MonoBehaviour
     private ObjectHeldTracker heldTracker;
     private bool inSocket = false;
     private Vector3 initPos;
-    private Quaternion initRotation;
+    public Quaternion initRotation;
     private Vector3 initScale;
     private bool resetTrigger = false;
     private Coroutine resetCoroutine;
@@ -53,6 +53,14 @@ public class TutorialObjects : MonoBehaviour
         if (other.CompareTag("Inventory"))
         {
             // In case you want to reset when inside the inventory, you can set resetTrigger to true here
+            inSocket = true;
+
+            // Cancel the reset coroutine if the object is inside the socket
+            if (resetCoroutine != null)
+            {
+                StopCoroutine(resetCoroutine);
+                resetCoroutine = null;
+            }
         }
     }
 
@@ -65,6 +73,7 @@ public class TutorialObjects : MonoBehaviour
 
         if (other.CompareTag("Inventory"))
         {
+            inSocket = false;
             // In case you want to reset when exiting the inventory, you can set resetTrigger to true here
         }
     }

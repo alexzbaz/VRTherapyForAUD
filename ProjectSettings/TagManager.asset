@@ -31,6 +31,11 @@ TagManager:
   - Clean
   - Dirty
   - Book
+  - Tutorial_Object
+  - Tutorial_Socket
+  - UMAIgnore
+  - Dishes_Object
+  - Dishes_Socket
   layers:
   - Default
   - TransparentFX

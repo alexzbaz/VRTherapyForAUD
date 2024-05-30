@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class Socket : MonoBehaviour
 {
-    // Object's position
-    public GameObject child;
     [SerializeField] private string compareTag;
+    [SerializeField] private GameObject attachPoint;
+    [SerializeField] private GameObject ring;
 
-    private Transform socketTransform;
-    private Transform ring;
     private ObjectHeldTracker heldTracker;
     private Vector3 initialRingScale;
 
@@ -18,24 +16,15 @@ public class Socket : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        socketTransform = this.transform;
-        ring = transform.Find("Ring");
-        initialRingScale = ring.localScale;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        initialRingScale = ring.transform.localScale;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Some Collision");
         if (other.CompareTag(compareTag))
         {
-            Debug.Log("Inside Collider of Socket");
-            ring.localScale *= 1.5f;
+            Debug.Log("Inside");
+            ring.transform.localScale *= 1.5f;
 
             // Get the ObjectHeldTracker component from the colliding object
             heldTracker = other.GetComponent<ObjectHeldTracker>();
@@ -47,25 +36,29 @@ public class Socket : MonoBehaviour
         Debug.Log("Some Collision");
         if (other.CompareTag(compareTag))
         {
-            Debug.Log("Inside Collider of Socket");
-            ring.localScale = initialRingScale;
-
-            heldTracker = null;
+            ring.transform.localScale = initialRingScale;
 
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag(compareTag) && heldTracker != null && !heldTracker.IsHeld())
+        if (other.CompareTag(compareTag) && !heldTracker.IsHeld())
         {
-            Debug.Log("Object is not held and inside collider. Attaching to ring.");
+            if (CompareTag("Tutorial_Object"))
+            {
+                other.transform.position = attachPoint.transform.position; // Adjust as needed for correct placement
+                
+                other.transform.rotation = other.GetComponent<TutorialObjects>().initRotation;
+            }
 
-            // Attach the object to the ring
+            else
+            {
+                other.gameObject.SetActive(false);
+                
+            }
 
-            other.transform.position = ring.position; // Adjust as needed for correct placement
-            other.transform.rotation = ring.rotation; // Adjust as needed for correct orientation
-            ring.localScale = initialRingScale;
+            ring.transform.localScale = initialRingScale;
 
         }
     }
