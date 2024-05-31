@@ -5,23 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-	private static GameManager _instance;
+	public static GameManager _instance;
 
 	public int sceneNum;
 	public Scenes levelSelected;
+	public AlcoholType alcoholSelected;
 
-    public static GameManager Instance
-	{
-		get
-		{
-			if (_instance is null)
-			{
-				Debug.LogError("Game Manager is null");
-			}
+ //   public static GameManager Instance
+	//{
+	//	get
+	//	{
+	//		if (_instance is null)
+	//		{
+	//			Debug.LogError("Game Manager is null");
+	//		}
 
-			return _instance;
-		}
-	}
+	//		return _instance;
+	//	}
+	//}
 
 	void Awake()
 	{
@@ -41,6 +42,11 @@ public class GameManager : MonoBehaviour
 	public void LoadScene(int scene)
 	{
 		SceneManager.LoadScene(scene);
+	}
+
+	public void UpdateAlcoholInScenes(int selection)
+	{
+		//alcoholSelected = selection;
 	}
 
 	//// For testing purposes
@@ -74,8 +80,9 @@ public enum HomeLevelCustomize
 public enum AlcoholType
 {
 	BEER,
-	VODKA,
-	WHISKEY,
-	WINE,
+    WINE,
+    WHISKEY,
+    VODKA,
+    
 }
 

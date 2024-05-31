@@ -11,19 +11,27 @@ public class MainMenu : MonoBehaviour
 	public Toggle supermarketToggle;
 	public Toggle barToggle;
 	public Toggle partyToggle;
-	public ToggleGroup toggleGroup;
+	public ToggleGroup toggleGroupSettings;
 
-	public Button backButton;
+    public Toggle wineToggle;
+    public Toggle beerToggle;
+    public Toggle whiskeyToggle;
+    public Toggle vodkaToggle;
+    public ToggleGroup toggleGroupCustomize;
 
-	private void Start()
+    public Button backButton1;
+	public Button backButton2;
+
+    private void Start()
 	{
-		gameManager = GameManager.Instance;
+		gameManager = GameManager._instance;
 	}
 
 	public void Update()
 	{
-		backButton.onClick.AddListener(() => { levelSelection(); });
-	}
+		backButton1.onClick.AddListener(() => { levelSelection(); });
+        backButton2.onClick.AddListener(() => { alcoholSelection(); });
+    }
 
 	// Is called from Editor
 	public void PlayGame()
@@ -56,6 +64,26 @@ public class MainMenu : MonoBehaviour
 			gameManager.levelSelected = Scenes.PARTY;
 		}
 	}
+
+	private void alcoholSelection()
+	{
+        if (beerToggle.isOn)
+        {
+            gameManager.alcoholSelected = AlcoholType.BEER;
+        }
+        else if (wineToggle.isOn)
+        {
+            gameManager.alcoholSelected = AlcoholType.WINE;
+        }
+        else if (whiskeyToggle.isOn)
+        {
+            gameManager.alcoholSelected = AlcoholType.WHISKEY;
+        }
+        else if (vodkaToggle.isOn)
+        {
+            gameManager.alcoholSelected = AlcoholType.VODKA;
+        }
+    }
 
 	// Is called from Editor
 	public void homeLevelCustomization(Toggle toggle)
