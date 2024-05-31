@@ -36,6 +36,7 @@ TagManager:
   - UMAIgnore
   - Dishes_Object
   - Dishes_Socket
+  - Interactables
   layers:
   - Default
   - TransparentFX
