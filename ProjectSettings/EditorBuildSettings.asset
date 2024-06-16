@@ -17,15 +17,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Home.unity
     guid: e1b82130babe5c84d8e5e345bdd45fa1
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Supermarket.unity
     guid: 82886f7977c6f9f42b9384545f77f25f
   - enabled: 0
-    path: Assets/Scenes/Bar.unity
-    guid: d1ca2713a0464ce47a4547d5bfc69c04
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/Party.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}
