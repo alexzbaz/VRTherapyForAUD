@@ -8,12 +8,19 @@ public class Interaction1 : MonoBehaviour
     private Dictionary<int, AudioSource> interactionAudio;
     private Dictionary<int, string> interactionText;
     private List<int> interactionFlow;
+    private Animator animator;
+    public AudioSource source;
+    private bool active;
+    public Canvas ui;
 
     [SerializeField] private InteractionManager interactionManager;
     [SerializeField] private Pointsystem pointsystem;
 
     void Start() 
     {
+        active = false;
+        source = GetComponent<AudioSource>();
+        animator = gameObject.GetComponent<Animator>();
         interactionFlow = new List<int>();
         interactionText = new Dictionary<int, string>();
         // First answer
@@ -25,10 +32,15 @@ public class Interaction1 : MonoBehaviour
         // Third answer
         interactionText[4] = "Ausweichend: 'Glaub mir, ein einziger Drink kann sehr schaden.'";
         interactionText[5] = "Direkt: 'Nein, heute nicht.'";
+    }
 
-        if (interactionFlow.Count == 0)
+    private void Update()
+    {
+        if (interactionFlow.Count == 0 && active == false && ui.enabled)
         {
-            interactionManager.setText(interactionText[0], interactionText[1], "");
+            active = true;
+            animator.SetBool("Talking", true);
+            playAudioSource(1, 0, 1);
         }
     }
 
@@ -44,8 +56,7 @@ public class Interaction1 : MonoBehaviour
             {
                 pointsystem.add50Points();
                 // Play AudioSource
-                playAudioSource(1);
-                interactionManager.setText(interactionText[2], interactionText[3], "");
+                playAudioSource(1, 2, 3);                
             }
             if (interactionFlow.Count == 2)
             {
@@ -60,8 +71,7 @@ public class Interaction1 : MonoBehaviour
             {
                 pointsystem.add50Points();
                 // Play AudioSource
-                playAudioSource(1);
-                interactionManager.setText(interactionText[4], interactionText[5], "");
+                playAudioSource(1, 4, 5);
             }
             if (interactionFlow.Count == 2)
             {
@@ -71,9 +81,25 @@ public class Interaction1 : MonoBehaviour
         }
     }
 
-    public void playAudioSource(int audio)
+    public void playAudioSource(int audio, int text1, int text2)
     {
-
         
+        Debug.Log("Play Audio Source - Animator get Bool: " + animator.GetBool("Talking"));
+        ui.enabled = false;
+        source.Play();
+        StartCoroutine(waitForResponse(text1, text2));
+        animator.SetBool("Talking", false);
+    }
+
+    IEnumerator waitForResponse(int text1, int text2)
+    {
+        Debug.Log("1: Wait For Response: Ui Enabled true: " + ui.enabled);
+        while (source.isPlaying)
+        {
+            yield return null;
+        }
+        Debug.Log("3: Wait For Response: Ui Enabled true: " + ui.enabled);
+        ui.enabled = true;
+        interactionManager.setText(interactionText[text1], interactionText[text2], "");
     }
 }
