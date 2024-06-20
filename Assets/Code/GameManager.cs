@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
 	public int sceneNum;
 	public Scenes levelSelected;
+	public AlcoholType alcoholSelected;
 
     public static GameManager Instance
 	{
@@ -29,7 +30,6 @@ public class GameManager : MonoBehaviour
 		_instance = this;
 		Debug.Log(_instance);
 		DontDestroyOnLoad(this); // A GameManager should exist after the Level is destroyed and a new level is loaded.
-		LoadScene(sceneNum);
 	}
 
 	private void Start()
@@ -42,27 +42,15 @@ public class GameManager : MonoBehaviour
 	{
 		SceneManager.LoadScene(scene);
 	}
-
-	//// For testing purposes
-	//void NextScene()
-	//{
-	//	sceneNum++;
-	//	if (sceneNum == 5)
-	//	{
-	//		sceneNum = 0;
-	//	}
-	//	SceneManager.LoadScene(sceneNum);
-	//}
 }
 
 public enum Scenes
 {
-	MENU,
-	FOREST,
-	HOME,
-	SUPERMARKET,
-	BAR,
-	PARTY
+	MENU = 0,
+	FOREST = 1,
+	HOME = 2,
+	SUPERMARKET = 3,
+	PARTY = 4
 }
 
 public enum HomeLevelCustomize

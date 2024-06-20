@@ -152,8 +152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 423454b5a323d84448e6c8fe44563a84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneNum: 3
-  levelSelected: 2
+  sceneNum: 1
+  levelSelected: 0
+  alcoholSelected: 0
 --- !u!4 &968621614
 Transform:
   m_ObjectHideFlags: 0
