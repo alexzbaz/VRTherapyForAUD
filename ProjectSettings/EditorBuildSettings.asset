@@ -14,10 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Forest.unity
     guid: 9a088fb81cca5d1449605cdc783baf0d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Home.unity
     guid: e1b82130babe5c84d8e5e345bdd45fa1
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Supermarket.unity
     guid: 82886f7977c6f9f42b9384545f77f25f
   - enabled: 0
