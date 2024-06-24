@@ -18,6 +18,8 @@ public class Interaction1 : MonoBehaviour
     [SerializeField] private AudioClip interactionAudio1;
     [SerializeField] private AudioClip interactionAudio2;
     [SerializeField] private AudioClip interactionAudio3;
+    [SerializeField] private AudioClip interactionAudio4;
+    [SerializeField] private AudioClip interactionAudio5;
 
     void Start() 
     {
@@ -64,6 +66,8 @@ public class Interaction1 : MonoBehaviour
             if (interactionFlow.Count == 2)
             {
                 pointsystem.add50Points();
+                playAudioSource(interactionAudio3);
+                animator.SetBool("Talking", false);
                 interactionManager.sequenceFinished(0);
             }
         }
@@ -74,12 +78,14 @@ public class Interaction1 : MonoBehaviour
             {
                 pointsystem.add50Points();
                 // Play AudioSource
-                playAudioSource(interactionAudio3);
+                playAudioSource(interactionAudio4);
                 StartCoroutine(waitForResponse(4, 5));
             }
             if (interactionFlow.Count == 2)
             {
                 pointsystem.add50Points();
+                playAudioSource(interactionAudio5);
+                animator.SetBool("Talking", false);
                 interactionManager.sequenceFinished(0);
             }
         }
