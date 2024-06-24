@@ -57,15 +57,6 @@ public class Interaction2 : MonoBehaviour
         }
     }
 
-    public void setFirstInteraction()
-    {
-        if (interactionFlow.Count == 0 && interactionManager.currentInteraction == 1)
-        {
-            playAudioSource(interactionAudioTest);
-            StartCoroutine(waitForResponse(0, 1, 2));
-        }
-    }
-
     // OnClick set in Editor
     public void selectedOption(int option)
     {

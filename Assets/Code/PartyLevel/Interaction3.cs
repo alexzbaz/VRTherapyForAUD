@@ -4,17 +4,24 @@ using UnityEngine;
 
 public class Interaction3 : MonoBehaviour
 {
-    private Dictionary<int, AudioSource> interactionAudio;
     private Dictionary<int, string> interactionText;
     private List<int> interactionFlow; // Keys of the selected interactions
     private int interactionLevel;
+    [SerializeField] private Animator animator;
+    [SerializeField] private AudioSource audioSource;
+    public Canvas ui;
+    private bool active;
 
     [SerializeField] private InteractionManager interactionManager;
     [SerializeField] private Pointsystem pointsystem;
 
+    [SerializeField] private AudioClip interactionAudioTest;
+
     // Start is called before the first frame update
     void Start()
     {
+        active = false;
+        animator = GetComponent<Animator>();
         interactionLevel = 0;
         interactionFlow = new List<int>();
         interactionText = new Dictionary<int, string>();
@@ -72,11 +79,13 @@ public class Interaction3 : MonoBehaviour
         interactionText[25] = "Ausweichend: 'Mal schauen, wie der Abend noch läuft.'";
     }
 
-    public void setFirstInteraction()
+    private void Update()
     {
-        if (interactionLevel == 0) //&& interactionManager.currentInteraction == 2) Add back after testing
+        if (interactionFlow.Count == 0 && active == false && ui.enabled)
         {
-            interactionManager.setText(interactionText[0], interactionText[1], ""); // Set Text for Level 0
+            active = true;
+            playAudioSource(interactionAudioTest);
+            StartCoroutine(waitForResponse(0, 1, -1));
         }
     }
 
@@ -91,15 +100,15 @@ public class Interaction3 : MonoBehaviour
                 interactionFlow.Add(0);
                 pointsystem.add50Points();
                 // Play AudioSource
-                playAudioSource(1);
-                interactionManager.setText(interactionText[2], interactionText[3], interactionText[4]);
+                playAudioSource(interactionAudioTest);
+                StartCoroutine(waitForResponse(2, 3, 4));
             }
             else if (interactionLevel == 1) // clicked on text 2
             {
                 pointsystem.add50Points();
                 interactionFlow.Add(2);
-                playAudioSource(1);
-                interactionManager.setText(interactionText[5], interactionText[6], "");
+                playAudioSource(interactionAudioTest);
+                StartCoroutine(waitForResponse(5, 6, -1));
             }
             else if (interactionLevel == 2) // clicked on text 5 || text 12 || text 24
             {
@@ -107,21 +116,23 @@ public class Interaction3 : MonoBehaviour
                 {
                     pointsystem.deduct50Points();
                     interactionFlow.Add(5);
-                    playAudioSource(1);
+                    playAudioSource(interactionAudioTest);
+                    animator.SetBool("Talking", false);
                     interactionManager.sequenceFinished(2);
                 }
                 else if (interactionFlow[1] == 3) // text 12
                 {
                     pointsystem.add50Points();
                     interactionFlow.Add(12);
-                    playAudioSource(0);
-                    interactionManager.setText(interactionText[14], interactionText[15], "");
+                    playAudioSource(interactionAudioTest);
+                    StartCoroutine(waitForResponse(14, 15, -1));
                 }
                 else if (interactionFlow[1] == 4) // text 24
                 {
                     pointsystem.add200Points();
                     interactionFlow.Add(24);
-                    playAudioSource(0);
+                    playAudioSource(interactionAudioTest);
+                    animator.SetBool("Talking", false);
                     interactionManager.sequenceFinished(2);
                 }
             }
@@ -131,14 +142,15 @@ public class Interaction3 : MonoBehaviour
                 {
                     pointsystem.deduct50Points();
                     interactionFlow.Add(7);
-                    playAudioSource(1);
+                    playAudioSource(interactionAudioTest);
+                    animator.SetBool("Talking", false);
                     interactionManager.sequenceFinished(2);
                 }
                 else if (interactionFlow[1] == 3) // text 14
                 {
                     interactionFlow.Add(14);
-                    playAudioSource(1);
-                    interactionManager.setText(interactionText[16], interactionText[17], "");
+                    playAudioSource(interactionAudioTest);
+                    StartCoroutine(waitForResponse(16, 17, -1));
                 }
                 
             }
@@ -148,22 +160,22 @@ public class Interaction3 : MonoBehaviour
                 {
                     pointsystem.deduct50Points(); 
                     interactionFlow.Add(10);
-                    playAudioSource(1);
+                    playAudioSource(interactionAudioTest);
+                    animator.SetBool("Talking", false);
                     interactionManager.sequenceFinished(2);
                 }
                 else if (interactionFlow[3] == 14) // text 16
                 {
                     pointsystem.add50Points();
                     interactionFlow.Add(16);
-                    playAudioSource(1);
-                    interactionManager.setText(interactionText[18], interactionText[19], "");
+                    playAudioSource(interactionAudioTest);
+                    StartCoroutine(waitForResponse(18, 19, -1));
                 }
                 else if (interactionFlow[3] == 15) // text 20
                 {
                     interactionFlow.Add(20);
-                    playAudioSource(1);
-                    interactionManager.setText(interactionText[22], interactionText[23], "");
-
+                    playAudioSource(interactionAudioTest);
+                    StartCoroutine(waitForResponse(22, 23, -1));
                 }
             }
             else if (interactionLevel == 5)
@@ -172,14 +184,16 @@ public class Interaction3 : MonoBehaviour
                 {
                     pointsystem.deduct50Points();
                     interactionFlow.Add(18);
-                    playAudioSource(1);
+                    playAudioSource(interactionAudioTest);
+                    animator.SetBool("Talking", false);
                     interactionManager.sequenceFinished(2);
                 }
                 if (interactionFlow[4] == 20 || interactionFlow[4] == 21) // text 22
                 {
                     pointsystem.deduct50Points();
                     interactionFlow.Add(22);
-                    playAudioSource(1);
+                    playAudioSource(interactionAudioTest);
+                    animator.SetBool("Talking", false);
                     interactionManager.sequenceFinished(2);
                 }
             }
@@ -193,15 +207,15 @@ public class Interaction3 : MonoBehaviour
                 interactionFlow.Add(1);
                 pointsystem.add50Points();
                 // Play AudioSource
-                playAudioSource(1);
-                interactionManager.setText(interactionText[2], interactionText[3], interactionText[4]);
+                playAudioSource(interactionAudioTest);
+                StartCoroutine(waitForResponse(2, 3, 4));
             }
             else if (interactionLevel == 1) // clicked on text 3
             {
                 pointsystem.add50Points();
                 interactionFlow.Add(3);
-                playAudioSource(1);
-                interactionManager.setText(interactionText[12], interactionText[13], "");
+                playAudioSource(interactionAudioTest);
+                StartCoroutine(waitForResponse(12, 13, -1));
             }
             else if (interactionLevel == 2) // clicked on text 6 || text 13
             {
@@ -209,21 +223,22 @@ public class Interaction3 : MonoBehaviour
                 {
                     pointsystem.add50Points();
                     interactionFlow.Add(6);
-                    playAudioSource(1);
-                    interactionManager.setText(interactionText[7], interactionText[8], interactionText[9]);
+                    playAudioSource(interactionAudioTest);
+                    StartCoroutine(waitForResponse(7, 8, 9));
                 }
                 else if (interactionFlow[1] == 3)
                 {
                     pointsystem.add50Points();
                     interactionFlow.Add(13);
-                    playAudioSource(0);
-                    interactionManager.setText(interactionText[14], interactionText[15], "");
+                    playAudioSource(interactionAudioTest);
+                    StartCoroutine(waitForResponse(14, 15, -1));
                 }
                 else if (interactionFlow[1] == 4)
                 {
                     pointsystem.add200Points();
                     interactionFlow.Add(25);
-                    playAudioSource(0);
+                    playAudioSource(interactionAudioTest);
+                    animator.SetBool("Talking", false);
                     interactionManager.sequenceFinished(2);
                 }
             }
@@ -233,15 +248,15 @@ public class Interaction3 : MonoBehaviour
                 {
                     pointsystem.add50Points();
                     interactionFlow.Add(8);
-                    playAudioSource(1);
-                    interactionManager.setText(interactionText[10], interactionText[11], "");
+                    playAudioSource(interactionAudioTest);
+                    StartCoroutine(waitForResponse(10, 11, -1));
                 }
                 else if (interactionFlow[2] == 12 || interactionFlow[2] == 13)
                 {
                     pointsystem.add50Points();
                     interactionFlow.Add(15);
-                    playAudioSource(1);
-                    interactionManager.setText(interactionText[20], interactionText[21], "");
+                    playAudioSource(interactionAudioTest);
+                    StartCoroutine(waitForResponse(20, 21, -1));
                 }
             }
             else if (interactionLevel == 4) // clicked on text 11 || 17 || 21
@@ -256,15 +271,15 @@ public class Interaction3 : MonoBehaviour
                 {
                     pointsystem.add50Points();
                     interactionFlow.Add(17);
-                    playAudioSource(1);
-                    interactionManager.setText(interactionText[18], interactionText[19], "");
+                    playAudioSource(interactionAudioTest);
+                    StartCoroutine(waitForResponse(18, 19, -1));
                 }
                 else if (interactionFlow[3] == 15) // 21
                 {
                     pointsystem.add50Points();
                     interactionFlow.Add(21);
-                    playAudioSource(1);
-                    interactionManager.setText(interactionText[22], interactionText[23], "");
+                    playAudioSource(interactionAudioTest);
+                    StartCoroutine(waitForResponse(22, 23, -1));
                 }
             }
             else if (interactionLevel == 5) // clicked on text 19
@@ -273,21 +288,24 @@ public class Interaction3 : MonoBehaviour
                 {
                     pointsystem.add50Points(); // text 19
                     interactionFlow.Add(19);
-                    playAudioSource(1);
+                    playAudioSource(interactionAudioTest);
+                    animator.SetBool("Talking", false);
                     interactionManager.sequenceFinished(2);
                 }
                 else if (interactionFlow[4] == 20 || interactionFlow[4] == 21)
                 {
                     pointsystem.add50Points();
                     interactionFlow.Add(18);
-                    playAudioSource(1);
+                    playAudioSource(interactionAudioTest);
+                    animator.SetBool("Talking", false);
                     interactionManager.sequenceFinished(2);
                 }
             }
             else if (interactionLevel == 6)
             {
                 interactionFlow.Add(23);
-                playAudioSource(1);
+                playAudioSource(interactionAudioTest);
+                animator.SetBool("Talking", false);
                 interactionManager.sequenceFinished(2);
             }
         }
@@ -297,13 +315,14 @@ public class Interaction3 : MonoBehaviour
             {
                 interactionFlow.Add(4);
                 pointsystem.add100Points();
-                playAudioSource(1);
-                interactionManager.setText(interactionText[24], interactionText[25], "");
+                playAudioSource(interactionAudioTest);
+                StartCoroutine(waitForResponse(24, 25, -1));
             }
             else if (interactionLevel == 3) // clicked on text 9
             {
                 interactionFlow.Add(9);
-                playAudioSource(1);
+                playAudioSource(interactionAudioTest);
+                animator.SetBool("Talking", false);
                 interactionManager.sequenceFinished(2);
             }
         }
@@ -311,9 +330,29 @@ public class Interaction3 : MonoBehaviour
         interactionLevel += 1;
     }
 
-    public void playAudioSource(int audio)
+    private void playAudioSource(AudioClip clip)
     {
+        ui.enabled = false;
+        animator.SetBool("Talking", true);
+        audioSource.clip = clip;
+        audioSource.Play();
+    }
 
-
+    IEnumerator waitForResponse(int text1, int text2, int text3)
+    {
+        while (audioSource.isPlaying)
+        {
+            yield return null;
+        }
+        ui.enabled = true;
+        animator.SetBool("Talking", false);
+        if (text3 != -1)
+        {
+            interactionManager.setText(interactionText[text1], interactionText[text2], interactionText[text3]);
+        }
+        else
+        {
+            interactionManager.setText(interactionText[text1], interactionText[text2], "");
+        }
     }
 }
