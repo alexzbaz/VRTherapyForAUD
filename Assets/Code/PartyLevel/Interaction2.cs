@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Interaction2 : MonoBehaviour
 {
-    private Dictionary<int, AudioSource> interactionAudio;
+    [SerializeField] private List<AudioClip> interactionAudioList;
     private Dictionary<int, string> interactionText;
     private List<int> interactionFlow;
 
