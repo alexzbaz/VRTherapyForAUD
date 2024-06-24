@@ -5,7 +5,6 @@ using UnityEngine;
 // This class is used for the text and the audio of the interaction.
 public class Interaction1 : MonoBehaviour
 {
-    //[SerializeField] private List<AudioClip> interactionAudioList;
     private Dictionary<int, string> interactionText;
     private List<int> interactionFlow;
     [SerializeField] private Animator animator;
@@ -24,7 +23,6 @@ public class Interaction1 : MonoBehaviour
     {
         active = false;
         animator = GetComponent<Animator>();
-        //interactionAudioList = new List<AudioClip>();
         interactionFlow = new List<int>();
         interactionText = new Dictionary<int, string>();
         // First answer
@@ -51,7 +49,6 @@ public class Interaction1 : MonoBehaviour
     // OnClick set in Editor
     public void selectedOption(int option)
     {
-        Debug.Log("selectedOption " + option);
         interactionFlow.Add(option);
 
         // First Button pressed
@@ -88,11 +85,11 @@ public class Interaction1 : MonoBehaviour
         }
     }
 
-    public void playAudioSource(AudioClip clip)
+    private void playAudioSource(AudioClip clip)
     {
         ui.enabled = false;
         animator.SetBool("Talking", true);
-        audioSource.clip = interactionAudio3;
+        audioSource.clip = clip;
         audioSource.Play();
     }
 

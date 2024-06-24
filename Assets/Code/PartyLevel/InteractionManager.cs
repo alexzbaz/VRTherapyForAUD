@@ -163,7 +163,7 @@ public class InteractionManager : MonoBehaviour
             interactionAnchorsList[sequenceNumber + 1].SetActive(true);
             if (currentInteraction == 1)
             {
-                interaction2.setFirstInteraction();
+                //interaction2.setFirstInteraction();
             }
             if (currentInteraction == 2)
             {
