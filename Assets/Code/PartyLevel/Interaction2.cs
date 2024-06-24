@@ -15,6 +15,11 @@ public class Interaction2 : MonoBehaviour
     [SerializeField] private Pointsystem pointsystem;
 
     [SerializeField] private AudioClip interactionAudioTest;
+    [SerializeField] private AudioClip interactionAudio1;
+    [SerializeField] private AudioClip interactionAudio2;
+    [SerializeField] private AudioClip interactionAudio3;
+    [SerializeField] private AudioClip interactionAudio4;
+    [SerializeField] private AudioClip interactionAudio5;
 
     // Start is called before the first frame update
     void Start()
@@ -52,7 +57,7 @@ public class Interaction2 : MonoBehaviour
         if (interactionFlow.Count == 0 && active == false && ui.enabled)
         {
             active = true;
-            playAudioSource(interactionAudioTest);
+            playAudioSource(interactionAudio1);
             StartCoroutine(waitForResponse(0, 1, 2));
         }
     }
@@ -68,25 +73,25 @@ public class Interaction2 : MonoBehaviour
             if (interactionFlow.Count == 1) // clicked on text 0
             {
                 pointsystem.add50Points();
-                playAudioSource(interactionAudioTest);
+                playAudioSource(interactionAudio2);
                 StartCoroutine(waitForResponse(3, 4, 5));
             }
             else if (interactionFlow.Count == 2) // text 3
             {
                 pointsystem.add50Points();
-                playAudioSource(interactionAudioTest);
+                playAudioSource(interactionAudio3);
                 StartCoroutine(waitForResponse(6, 7, 8));
             }
             else if (interactionFlow.Count == 3) // text 6
             {
                 pointsystem.add50Points();
-                playAudioSource(interactionAudioTest);
+                playAudioSource(interactionAudio4);
                 StartCoroutine(waitForResponse(9, 10, -1));
             }
             else if (interactionFlow.Count == 4) // text 9
             {
                 pointsystem.add50Points();
-                playAudioSource(interactionAudioTest);
+                playAudioSource(interactionAudio5);
                 StartCoroutine(waitForResponse(11, 12, -1));
             }
             else if (interactionFlow.Count == 5) // text 11 - no deduction of points
@@ -103,25 +108,24 @@ public class Interaction2 : MonoBehaviour
             {
                 pointsystem.add50Points();
                 // Play AudioSource
-                playAudioSource(interactionAudioTest);
+                playAudioSource(interactionAudio2);
                 StartCoroutine(waitForResponse(3, 4, 5));
             }
             else if (interactionFlow.Count == 2) // text 4
             {
                 pointsystem.add50Points();
-                playAudioSource(interactionAudioTest);
+                playAudioSource(interactionAudio3);
                 StartCoroutine(waitForResponse(6, 7, 8));
             }
             else if (interactionFlow.Count == 3) // text 7
             {
                 pointsystem.add50Points();
-                playAudioSource(interactionAudioTest);
+                playAudioSource(interactionAudio4);
                 StartCoroutine(waitForResponse(9, 10, -1));
             }
             else if (interactionFlow.Count == 4) // text 10
             {
                 pointsystem.deduct50Points();
-                playAudioSource(interactionAudioTest);
                 interactionManager.sequenceFinished(1);
                 animator.SetBool("Talking", false);
             }
@@ -137,17 +141,16 @@ public class Interaction2 : MonoBehaviour
             if (interactionFlow.Count == 1) // text 2
             {
                 pointsystem.add50Points();
-                playAudioSource(interactionAudioTest);
+                playAudioSource(interactionAudio2);
                 StartCoroutine(waitForResponse(3, 4, 5));
             }
-            else if (interactionFlow.Count == 2) // text 5
+            else if (interactionFlow.Count == 2) // text 5 - sequence finish
             {
                 pointsystem.deduct50Points();
-                playAudioSource(interactionAudioTest);
                 animator.SetBool("Talking", false);
                 interactionManager.sequenceFinished(1);
             }
-            else if (interactionFlow.Count == 3) // text 8
+            else if (interactionFlow.Count == 3) // text 8 - sequence finish
             {
                 pointsystem.deduct50Points();
                 interactionManager.sequenceFinished(1);
