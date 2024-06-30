@@ -30,6 +30,8 @@ TagManager:
   - Trash
   - Clean
   - Dirty
+  - Stone_Socket
+  - Stone
   layers:
   - Default
   - TransparentFX
