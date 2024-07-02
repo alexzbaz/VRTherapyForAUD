@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Interactables_Home : MonoBehaviour
 {
-    // Object's position
-    public GameObject child;
 
     // Placing object
     [SerializeField] private string compareTag;
@@ -19,13 +17,22 @@ public class Interactables_Home : MonoBehaviour
         pointsGiven = false;
     }
 
-    void Update()
+    //void Update()
+    //{
+    //    if(transform.parent.parent.name == compareTag && pointsGiven == false)
+    //    {
+    //        pointsGiven = true;
+    //        pointsystem.add50Points();
+    //        Debug.Log(transform.parent.parent);
+    //    }
+    //}
+
+    private void OnTriggerEnter(Collider other)
     {
-        if(transform.parent.parent.name == compareTag && pointsGiven == false)
+        if (other.CompareTag(compareTag) && pointsGiven == false)
         {
             pointsGiven = true;
             pointsystem.add50Points();
-            Debug.Log(transform.parent.parent);
         }
     }
 }

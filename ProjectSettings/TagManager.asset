@@ -37,6 +37,10 @@ TagManager:
   - Dishes_Object
   - Dishes_Socket
   - Interactables
+  - Laundry_Socket
+  - Trash_Socket
+  - Trash_Object
+  - Laundry_Object
   layers:
   - Default
   - TransparentFX
@@ -49,7 +53,7 @@ TagManager:
   - Player
   - DynamicPose
   - NPC
-  - 
+  - Inventory
   - 
   - 
   - 

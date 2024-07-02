@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-
-    [SerializeField] private int scene;
+    private GameManager gameManager;
+    [SerializeField] private Scenes scene;
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameManager.Instance;
+        scene = gameManager.levelSelected;
     }
 
 
@@ -17,8 +19,8 @@ public class ChangeScene : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("test");
-            SceneManager.LoadScene(scene);
+            int sceneInt = (int)scene;
+            SceneManager.LoadScene(sceneInt);
         }
     }
 }

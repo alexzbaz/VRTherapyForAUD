@@ -5,24 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-	public static GameManager _instance;
+	private static GameManager _instance;
 
 	public int sceneNum;
 	public Scenes levelSelected;
 	public AlcoholType alcoholSelected;
 
- //   public static GameManager Instance
-	//{
-	//	get
-	//	{
-	//		if (_instance is null)
-	//		{
-	//			Debug.LogError("Game Manager is null");
-	//		}
+    public static GameManager Instance
+	{
+		get
+		{
+			if (_instance is null)
+			{
+				Debug.LogError("Game Manager is null");
+			}
 
-	//		return _instance;
-	//	}
-	//}
+			return _instance;
+		}
+	}
 
 	void Awake()
 	{
@@ -30,7 +30,6 @@ public class GameManager : MonoBehaviour
 		_instance = this;
 		Debug.Log(_instance);
 		DontDestroyOnLoad(this); // A GameManager should exist after the Level is destroyed and a new level is loaded.
-		LoadScene(sceneNum);
 	}
 
 	private void Start()
@@ -43,32 +42,15 @@ public class GameManager : MonoBehaviour
 	{
 		SceneManager.LoadScene(scene);
 	}
-
-	public void UpdateAlcoholInScenes(int selection)
-	{
-		//alcoholSelected = selection;
-	}
-
-	//// For testing purposes
-	//void NextScene()
-	//{
-	//	sceneNum++;
-	//	if (sceneNum == 5)
-	//	{
-	//		sceneNum = 0;
-	//	}
-	//	SceneManager.LoadScene(sceneNum);
-	//}
 }
 
 public enum Scenes
 {
-	MENU,
-	FOREST,
-	HOME,
-	SUPERMARKET,
-	BAR,
-	PARTY
+	MENU = 0,
+	FOREST = 1,
+	HOME = 2,
+	SUPERMARKET = 3,
+	PARTY = 4
 }
 
 public enum HomeLevelCustomize
@@ -80,9 +62,8 @@ public enum HomeLevelCustomize
 public enum AlcoholType
 {
 	BEER,
-    WINE,
-    WHISKEY,
-    VODKA,
-    
+	VODKA,
+	WHISKEY,
+	WINE,
 }
 

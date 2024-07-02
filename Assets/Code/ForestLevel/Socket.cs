@@ -33,7 +33,7 @@ public class Socket : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Some Collision");
+        //Debug.Log("Some Collision");
         if (other.CompareTag(compareTag))
         {
             ring.transform.localScale = initialRingScale;
@@ -45,7 +45,7 @@ public class Socket : MonoBehaviour
     {
         if (other.CompareTag(compareTag) && !heldTracker.IsHeld())
         {
-            if (CompareTag("Tutorial_Object"))
+            if (other.CompareTag("Tutorial_Object"))
             {
                 other.transform.position = attachPoint.transform.position; // Adjust as needed for correct placement
                 

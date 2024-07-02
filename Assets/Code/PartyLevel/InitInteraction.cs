@@ -7,7 +7,6 @@ using UnityEngine;
 public class InitInteraction : MonoBehaviour
 {
     [SerializeField] private Canvas ui;
-    public Interaction3 interaction3; // Remove after testing
 
     private void Start()
     {
@@ -18,9 +17,9 @@ public class InitInteraction : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Start Dialogue " + ui.name);
+            // Bei reinlaufen Y_scale auf 0.2 ändern
+            transform.localScale = new Vector3(0.5f, 0.2f, 0.5f);
             ui.enabled = true;
-            interaction3.setFirstInteraction();
         }
     }
 

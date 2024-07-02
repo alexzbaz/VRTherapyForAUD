@@ -43,7 +43,7 @@ public class InteractionManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentInteraction = 2; // Set back to 0 after testing
+        currentInteraction = 0;
 
         interactionAnchorsList = new List<GameObject>();
         interactionAnchorsList.Add(interactionAnchor1);
@@ -62,6 +62,7 @@ public class InteractionManager : MonoBehaviour
 
     public void setText(string interaction1, string interaction2, string interaction3)
     {
+        Debug.Log("Set Text: " + interaction1);
         if (interaction3 == "")
         {
             interaction2Button3.GetComponent<Button>().enabled = false;
@@ -160,14 +161,10 @@ public class InteractionManager : MonoBehaviour
         {
             currentInteraction += 1;
             interactionAnchorsList[sequenceNumber + 1].SetActive(true);
-            if (currentInteraction == 1)
-            {
-                interaction2.setFirstInteraction();
-            }
-            if (currentInteraction == 2)
-            {
-                interaction3.setFirstInteraction();
-            }
+        }
+        else
+        {
+            Application.Quit();
         }
     }
 
